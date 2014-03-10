@@ -17,7 +17,7 @@ $db_name = "periscope";
 //shouldn't be root in release; install should create a user 
 
 $db_user = "root"; 
-$db_password = "Umfund1$1";
+$db_password = "password";
 
 //Site Name
 
