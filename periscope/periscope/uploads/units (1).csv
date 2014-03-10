@@ -1,0 +1,432 @@
+U_ID,Name,GradeLevel_id,Subject_id,StartDate,EndDate,enabled
+1486,Christmas Mural,2,1,2013-12-10,2013-12-17,1
+1643,Lines: Harold and the Purple Crayon,2,1,2013-09-17,2013-10-01,1
+1666,The Use of Materials,2,1,2013-09-16,2014-06-06,1
+1669,Birds,2,1,2014-01-10,2014-04-11,1
+1106,Using Passions to Engage in Books,2,3,2012-10-01,2012-11-30,1
+1442,Nursery Rhymes and Poems,2,3,2013-09-30,2014-05-30,1
+1553,Letter/Sound/Words,2,3,2013-09-23,2013-05-30,1
+1584,Rhyming,2,4,2013-10-14,2014-06-01,1
+1585,Self Regulation,2,4,2013-09-23,2013-05-30,1
+1342,Autumn,2,5,2013-09-20,2013-11-22,1
+1528,Shapes and Colors,2,5,2013-09-09,2013-09-30,1
+1113,Measurement,2,6,2013-09-30,2014-05-30,1
+1413,Calendar,2,6,2013-09-12,2014-06-03,1
+1583,Sorting,2,6,2012-10-15,2014-06-01,1
+1602,Plane Shapes,2,6,2013-09-30,2014-05-30,1
+1218,Gross Motor,2,8,2013-09-05,2013-09-27,1
+1221,Christmas Games,2,8,2013-12-02,2013-12-20,1
+1628,Lent,2,9,2014-03-05,2014-04-20,1
+1028,Plants,2,10,2012-04-09,2012-04-20,1
+1030,Birds,2,10,2011-12-01,2012-06-01,1
+1102,Our Solar System,2,10,2012-05-21,2012-06-01,1
+1373,Magnets,2,10,2014-01-13,2014-01-17,1
+1384,Polar Pals,2,10,2012-01-20,2012-01-30,1
+1556,bugs,2,10,2013-04-29,2013-05-14,1
+1605,Five Senses,2,10,2013-12-09,2014-04-18,1
+1408,Presidents,2,11,2013-02-16,2013-02-22,1
+1440,All About Me,2,11,2013-09-09,2013-09-23,1
+1441,School Rules and Class Routines,2,11,2013-09-03,2013-06-04,1
+1466,Family,2,11,2013-11-04,2013-11-30,1
+1500,Christmas/Winter Holidays Dec.,2,11,2013-12-02,2013-12-20,1
+1601,Christopher Columbus,2,11,2013-10-07,2013-10-14,1
+1615,Community Helpers,2,11,2013-03-04,2013-03-15,1
+1345,Getting to know my teacher and a new environment.,2,12,2013-09-10,2013-10-18,1
+1367,Los números y los colores,2,12,2013-10-23,2013-12-13,1
+1385,My body. My age.,2,12,2014-01-06,2014-03-28,1
+1402,My basic family and my pets,2,12,2014-04-01,2014-06-10,1
+1062,Thinking and Working as Artists: Discovering Materials,3,1,2011-09-08,2012-09-14,1
+1103,Dinosaurs,3,1,2013-02-18,2013-03-08,1
+1457,Dinosaurs,3,1,2013-09-01,2014-06-01,1
+1463,Illustration: Where the Wild Things Are,3,1,2013-10-15,2013-11-22,1
+1629,Three Dimension ,3,1,2013-09-23,2013-09-30,1
+1644,Marshmallow Sculpture,3,1,2013-10-15,2013-10-29,1
+1646,Art Materials,3,1,2013-09-17,2013-11-15,1
+1667,Working as Artists,3,1,2013-09-16,2014-06-09,1
+1668,Clay,3,1,2014-04-07,2014-05-05,1
+1340,Writing: Becoming a Community of Writers,3,3,2013-09-01,2013-10-11,1
+1347,writing: Once Upon a Time/Fiction,3,3,2013-12-02,2014-01-31,1
+1349,Writing: Nonfiction ,3,3,2014-02-03,2014-03-14,1
+1364,Library: Who Am I?,3,3,2013-09-09,2013-10-31,1
+1372,Library: Book Care Rules,3,3,2013-09-16,2013-09-20,1
+1374,Writing: Poetry,3,3,2014-04-01,2014-05-09,1
+1409,Reading: Building a Community of Readers,3,3,2013-09-10,2013-11-22,1
+1429,Library: Classroom Rules,3,3,2013-09-09,2013-09-20,1
+1480,Reading: Once Upon a Time,3,3,2013-12-02,2013-12-20,1
+1487,Reading: Nonfiction,3,3,2014-02-03,2014-03-14,1
+1488,Reading: Author study,3,3,2014-01-06,2014-01-31,1
+1512,Reading: Poetry,3,3,2014-03-31,2014-05-02,1
+1606,Spelling,3,3,2013-09-09,2014-06-06,1
+1481,Math: Once upon a Time,3,6,2013-12-02,2013-12-20,1
+1235,Cooperative Learning,3,8,2013-09-05,2013-09-27,1
+1033,Dinosaurs,3,10,2014-01-27,2014-03-02,1
+1036,Trees,3,10,2011-09-14,2012-06-01,1
+1509,Weather,3,10,2013-09-04,2014-05-30,1
+1511,Growth,3,10,2014-04-30,2014-06-06,1
+1034,Australia,3,11,2014-03-31,2012-04-27,1
+1390,Maps,3,11,2014-03-03,2014-03-14,1
+1505,Getting to Know you,3,11,2013-09-04,2013-10-07,1
+1506,Family Holiday Traditions,3,11,2013-11-11,2013-12-20,1
+1437,Getting to know my teacher and a new environment.,3,12,2013-09-09,2013-10-10,1
+1063,Foundations of Art,4,1,2011-09-08,2011-09-30,1
+1089,We Belong Together: Expressing Moods and Feelings,4,1,2014-09-16,2013-10-01,1
+1464,Egyptian Art,4,1,2014-02-10,2014-03-04,1
+1492,Mechanimals,4,1,2013-12-04,2013-12-11,1
+1494,Paul Klee's Cat and Bird,4,1,2014-01-14,2014-01-28,1
+1495,Faith Ringgold,4,1,2014-02-04,2014-02-11,1
+1631,People and Places: Seeing Details and  Actions,4,1,2013-10-21,2014-12-19,1
+1633,Colorful Stories: Color and Imagination,4,1,2014-01-07,2014-03-11,1
+1634,Colorful Stories: Color and Imagination,4,1,2014-02-18,2014-04-01,1
+1635,Colorful Stories: Color and Imagination,4,1,2014-02-18,2014-04-01,1
+1642,Sequencing and Books,4,1,2014-04-01,2014-04-29,1
+1645,Looking Around Us: Seeing Our World ,4,1,2013-09-09,2013-10-14,1
+1665,Getting Ideas: Art and Nature,4,1,2014-02-03,2014-06-09,1
+1356,Alliteration,4,3,2013-09-01,2014-06-01,1
+1368,Personification,4,3,2013-09-01,2014-06-01,1
+1430,writing process--What do I Write?,4,3,2013-09-09,2014-06-01,1
+1555,Opinion Writing,4,3,2014-02-03,2014-02-14,1
+1569,Opinion Writing,4,3,2014-02-03,2014-02-14,1
+1572,Using transitional words in Writing,4,3,2014-01-07,2014-01-21,1
+1586,Writing a Friendly Letter,4,3,2014-02-11,2014-06-01,1
+1587,Character Traits,4,3,2013-09-01,2014-06-01,1
+1271,Unit 6 Developing Fact Power,4,6,2013-01-21,2013-02-11,1
+1073,Intro. to Music Literacy: Beat/Rhythm,4,7,2011-09-08,2011-12-16,1
+1651,Music Literacy: Pitch and Solfege,4,7,2013-10-01,2013-12-20,1
+1652,"Instruments: Rhythm, Orff, & Boomwhackers",4,7,2013-11-04,2014-04-30,1
+1653,The 5-line Staff,4,7,2013-11-11,2014-04-30,1
+1654,1st Grade Music End of Year Review,4,7,2014-05-05,2014-06-06,1
+1222,Christmas Games,4,8,2013-12-02,2013-12-20,1
+1039,Solids & Liquids: Bits and Pieces,4,10,2011-12-01,2011-12-09,1
+1040,Liquids,4,10,2011-11-03,2011-11-24,1
+1041,Solids,4,10,2011-10-06,2011-10-28,1
+1117,Solids,4,10,2012-11-01,2011-11-30,1
+1260,Insects,4,10,2013-04-01,2013-05-17,1
+1038,The Community,4,11,2011-09-01,2011-10-31,1
+1365,Geography,4,11,2013-09-01,2014-06-01,1
+1612,Ancient Egypt,4,11,2014-01-13,2014-03-14,1
+1071,Community: School,4,12,2012-09-03,2012-09-30,1
+1072,Community: House,4,12,2012-10-10,2012-10-30,1
+1075,Community: Market,4,12,2012-11-02,2012-11-30,1
+1655,Navidad and weather,4,12,2012-12-03,2014-01-24,1
+1657,Nature ,5,1,2013-09-01,2014-06-01,1
+1659,Expressing Moods and Feelings,5,1,2013-09-01,2014-06-01,1
+1660,Nature: Subject Matter,5,1,2013-09-01,2014-06-01,1
+1661,Picture Stories,5,1,2013-09-01,2014-06-01,1
+1662,Space and Movement,5,1,2013-09-01,2014-06-01,1
+1467,Spelling,5,2,2013-09-03,2014-06-06,1
+1268,The Use of Verbs,5,3,2012-11-01,2012-11-30,1
+1274,The Use of Similes,5,3,2012-12-03,2012-12-21,1
+1275,The Use of Possessives,5,3,2013-03-01,2013-03-15,1
+1276,The Use of Nouns,5,3,2012-10-01,2012-10-31,1
+1277,Homophones,5,3,2013-04-01,2013-04-30,1
+1278,Contractions,5,3,2013-01-07,2013-01-31,1
+1279,The Use of Commas,5,3,2012-09-04,2012-09-28,1
+1280,The Use of Adjectives,5,3,2012-12-03,2012-12-20,1
+1286,Choosing Just Right Books,5,3,2013-09-03,2013-09-30,1
+1287,Monitoring for Meaning,5,3,2013-09-01,2014-06-01,1
+1288,Decoding Skills/ Phonics,5,3,2013-09-01,2014-06-01,1
+1289,Story Elements,5,3,2013-09-03,2013-10-16,1
+1290,Non-fiction Elements,5,3,2014-02-10,2013-03-15,1
+1291,Making Connections,5,3,1899-12-30,2014-06-01,1
+1293,Asking Questions,5,3,2013-09-01,2014-06-01,1
+1294,Inferences,5,3,2014-02-03,2014-02-14,1
+1295,Visualization,5,3,2013-12-02,2013-12-20,1
+1473,Wilson,5,3,2013-09-03,2014-06-06,1
+1232,Halloween ,5,8,2013-10-14,2013-10-31,1
+1498,Reconciliation,5,9,2013-09-01,2014-06-01,1
+1499,Eucharist,5,9,2013-09-01,2014-06-01,1
+1045,Stems,5,10,2012-03-26,2012-05-31,1
+1046,Grass & Green Seeds,5,10,2012-03-28,2012-05-31,1
+1047,Brassica Seeds,5,10,2014-03-24,2014-05-23,1
+1048,Balance & Motion,5,10,2012-01-04,2012-03-14,1
+1251,Exploring Air,5,10,2012-09-06,2012-10-05,1
+1258,Observing the Weather,5,10,2012-10-08,2012-10-19,1
+1259,Wind Exploration,5,10,2012-11-23,2012-12-21,1
+1044,China,5,11,2012-01-03,2012-02-03,1
+1249,Black History Month,5,11,2013-02-01,2013-02-28,1
+1262,African Folktales,5,11,2013-09-23,2013-10-25,1
+1296,Antarctica &Penguins,5,11,2013-02-11,2013-04-01,1
+1297,Ocean Habitats,5,11,2013-04-02,2013-05-24,1
+1346,Africa,5,11,2013-09-23,2013-10-25,1
+1053,Bunnicula Guided Reading,6,3,2011-10-03,2011-11-03,1
+1055,First Twenty Days of School,6,3,2011-09-08,2011-10-03,1
+1361,Author Study- Raold Dahl,6,3,2014-02-17,2014-02-21,1
+1363,"JGB ""The Monster Who Grew Small""",6,3,2013-11-04,2013-08-09,1
+1370,Literature circles,6,3,2013-11-18,2013-12-07,1
+1382,"JGB - ""Fire On the Mountain""",6,3,2013-11-27,2013-11-30,1
+1386,JGB-The Master Cat,6,3,2013-02-10,2014-02-14,1
+1389,Guided Reading- Medieval Theme,6,3,2014-01-20,2014-02-07,1
+1400,Guided Reading - Charlotte's Web,6,3,2014-02-24,2013-09-06,1
+1406,Guided Reading- One Day in The Rainforest,6,3,2013-09-01,2014-06-01,1
+1460,JGB- The Green Man,6,3,2014-04-01,2013-12-06,1
+1472,Guided Reading,6,3,2014-04-07,2014-04-25,1
+1049,Unit 1,6,6,2011-09-07,2011-09-26,1
+1101,"Routines, Review, & Assessment",6,6,2011-09-12,2011-10-04,1
+1109,Adding and Subtracting Whole Number,6,6,2011-10-05,2011-10-26,1
+1530,Seek and Serve God,6,9,2013-09-01,2014-06-01,1
+1531,Think Imagine and Create,6,9,2013-09-01,2014-06-01,1
+1532,Serve Others,6,9,2013-09-01,2014-06-01,1
+1533,Share and Cooperate,6,9,2013-09-01,2014-06-01,1
+1534,Goal 5,6,9,2013-09-01,2014-06-01,1
+1050,Rocks and Minerals:  Mock Rocks (Investigation 1/4),6,10,2008-09-15,2013-11-30,1
+1610,Physics of Sound,6,10,2014-01-07,2014-03-14,1
+1620,Rainforest,6,10,2014-04-01,2014-06-06,1
+1057,Foundations of Art,7,1,2011-09-08,2011-09-30,1
+1471,Poetry,7,2,2013-09-01,2014-06-01,1
+1223,Note Taking,7,3,2013-01-05,2013-03-31,1
+1234,Reading Journal Letters,7,3,2012-10-01,2013-05-30,1
+1237,Read & Think/ Independent Reading,7,3,2012-09-04,2012-11-20,1
+1613,Knucklehead,7,3,2013-10-07,2013-11-15,1
+1618,Battle writing,7,3,2014-03-03,2014-04-11,1
+1231,Historical Fiction Book Clubs,7,5,2013-01-07,2013-03-30,1
+1336,Intro to Notebooking,7,5,2013-09-04,2014-06-04,1
+1348,Intro to notebooking,7,5,2013-09-05,2014-06-05,1
+1359,Geography,7,5,2013-09-05,2013-11-10,1
+1377,Geography,7,5,2013-09-05,2013-11-11,1
+1376,Recorder Basics,7,7,2013-10-01,2013-12-20,1
+1395,Intermediate Recorder Technique and Repertoire,7,7,2014-01-06,2014-05-30,1
+1397,Music and the American Revolution,7,7,2014-01-06,2014-02-28,1
+1401,4th Grade Music Theory and Repertoire - 1st Semester,7,7,2013-09-04,2013-12-20,1
+1433,4th Grade Music Theory and Repertoire,7,7,2014-01-06,2014-05-30,1
+1444,Flag Football,7,8,2013-09-04,2013-10-04,1
+1446,Indoor Soccer,7,8,2013-10-07,2013-10-25,1
+1577,Pickle Ball,7,8,2013-10-28,2013-11-29,1
+1580,Floor Hockey,7,8,2013-12-02,2013-12-20,1
+1626,Basketball,7,8,2014-01-06,2014-01-31,1
+1105,Inventions,7,10,2012-04-02,2012-05-29,1
+1246,Water,7,10,2012-09-04,2012-11-30,1
+1469,Human Body,7,10,2014-04-07,2014-05-23,1
+1474,Human BodyType your Unit Title,7,10,2014-04-07,2014-05-23,1
+1575,Magnetism & Electricity,7,10,2014-02-03,2014-05-02,1
+1056,American Revolution,7,11,2012-01-04,2012-03-16,1
+1244,Lenape Native Americans,7,11,2012-09-30,2012-10-30,1
+1255,The Colonial Fair Experience,7,11,2012-11-05,2012-12-17,1
+1138,FOUNDATIONS,8,1,2011-09-10,2014-06-01,1
+1081,Number The Stars,8,2,2013-10-29,2013-11-16,1
+1082,A Single Shard,8,2,2013-01-16,2013-02-14,1
+1083,The Personal Essay,8,2,2014-05-01,2014-05-24,1
+1122,Hatchet,8,2,2012-04-23,2012-05-18,1
+1229,Beowulf,8,2,2012-10-01,2012-11-05,1
+1236,Traditional Literature,8,2,2012-09-10,2012-10-01,1
+1250,Spelling,8,2,2012-09-04,2013-06-04,1
+1343,Writing: Personal Narrative,8,2,2013-09-07,2013-10-09,1
+1412,Expanded Paragraphs,8,2,2013-09-09,2014-06-03,1
+1416,Grammar,8,2,2013-09-09,2014-06-09,1
+1524,Poetry,8,2,2014-04-01,2014-04-30,1
+1538,Creative Writing,8,2,2014-01-10,2014-01-24,1
+1623,Short Stories and Jr. Great Books,8,2,2014-02-18,2014-03-13,1
+1624,Shiloh,8,2,2014-03-17,2014-04-18,1
+1625,Biography Book Report,8,2,2014-01-07,2014-01-31,1
+1598,Tobacco/Smoking,8,4,2014-01-15,2014-01-15,1
+1599,Alcohol,8,4,2014-01-22,2014-01-22,1
+1600,Drugs,8,4,2014-01-29,2014-01-29,1
+1627,Coping with Anger,8,4,2014-02-19,2014-02-19,1
+1159,Chapter 1: Operations and Properties,8,6,2013-09-23,2013-10-14,1
+1161,Chapter 2: Introduction to Algebra,8,6,2012-10-15,2012-11-07,1
+1162,Chapter 3: Decimals ,8,6,2012-11-08,2012-11-20,1
+1163,Chapter 4: Number Theory and Fractions ,8,6,2012-11-26,2012-12-20,1
+1164,Chapter 6: Data Collection and Analysis,8,6,2013-01-07,2013-01-23,1
+1165,Chapter 5: Fraction Operations,8,6,2013-01-24,2013-02-15,1
+1166,Chapter 7: Proportional Relationships,8,6,2013-02-18,2013-03-15,1
+1167,Chapter 8: Measurement and Geometry ,8,6,2013-04-03,2013-04-24,1
+1168,Chapter 9: Integers and the Coordinate Plane,8,6,2013-04-25,2013-05-22,1
+1603,Math 5 Prerequisite,8,6,2013-09-09,2013-09-20,1
+1619,Chapter 3: Decimals,8,6,2013-10-14,2013-11-14,1
+1065,Band instrument foundations and techniques,8,7,2011-09-08,2011-10-31,1
+1647,Intro to Middle School Music,8,7,2013-09-04,2013-10-30,1
+1648,Intro to Handchimes,8,7,2013-10-02,2013-12-20,1
+1649,Historical Music,8,7,2013-11-04,2013-12-20,1
+1650,World Music,8,7,2014-01-07,2014-06-06,1
+1066,Flag Football,8,8,2013-09-04,2013-10-04,1
+1067,Pickle Ball,8,8,2013-10-28,2013-11-29,1
+1097,Basketball,8,8,2014-01-06,2014-01-31,1
+1098,WiffleBall,8,8,2014-03-03,2014-04-11,1
+1115,Fitness Month,8,8,2014-02-03,2014-02-28,1
+1220,Indoor Soccer,8,8,2013-10-07,2013-10-25,1
+1233,Floor Hockey,8,8,2013-12-02,2013-12-20,1
+1242,Backyard Games,8,8,2014-04-14,2014-05-30,1
+1414,World of Abraham,8,9,2013-09-01,2014-06-01,1
+1417,World of Moses,8,9,2013-09-01,2014-06-01,1
+1418,World of David,8,9,2013-09-01,2014-06-01,1
+1080,Simple Machine 1,8,10,2012-12-01,2012-12-15,1
+1153,Independent Science Project,8,10,2013-01-21,2013-03-11,1
+1670,Independent Science Project:  ISP,8,10,2014-01-27,2014-03-10,1
+1673,Micromystery,8,10,2014-05-19,2014-06-05,1
+1086,Civilization Begins in Ancient China,8,11,2012-04-02,2012-04-23,1
+1087,Geography of China,8,11,2012-10-03,2012-10-22,1
+1088,Geography of the Fertile Crescent,8,11,2012-11-06,2012-11-21,1
+1090,Geography and Ancient Egypt,8,11,2013-01-09,2013-03-08,1
+1091,Words of History,8,11,2012-09-05,2012-09-12,1
+1092,Introduction to Archaeology,8,11,2011-10-10,2011-10-19,1
+1093,Character Study of Archaeologist C. Leonard Woolley,8,11,2012-12-05,2012-12-12,1
+1125,Wax Museum,8,11,2012-05-01,2012-06-08,1
+1135,Digging The Past,8,11,2011-09-12,2011-10-20,1
+1141,Web Quest - Mesopotamia,8,11,2012-12-03,2012-12-18,1
+1175,The Assyrians,8,11,2012-12-12,2012-12-18,1
+1185,Babylonians,8,11,2012-12-18,2012-12-20,1
+1198,Paper Making:Papyrus,8,11,2013-01-28,2013-01-31,1
+1338,Themes of Social Studies,8,11,2013-09-04,2013-09-10,1
+1458,Sumer Achievements,8,11,2013-12-03,2013-12-05,1
+1501,Cuneiform,8,11,2013-12-15,2013-12-17,1
+1656,TELLING,9,1,2014-09-14,2014-06-01,1
+1658,Order and Organization,9,1,2014-01-14,2014-06-01,1
+1245,Ulysses,9,2,2012-12-03,2013-01-18,1
+1247,Shipwrecked at the Bottom of the Bottom of the World,9,2,2012-11-12,2012-12-14,1
+1257,Spelling,9,2,2012-09-04,2013-06-05,1
+1263,Persuasive Essay,9,2,2012-12-11,2012-12-21,1
+1269,Freak the Mighty,9,2,2013-04-02,2013-05-08,1
+1355,The Amazon Review,9,2,2014-04-02,2015-04-22,1
+1366,Worth,9,2,2015-02-04,2014-03-06,1
+1369,Historical Book Report,9,2,2014-01-09,2014-02-21,1
+1375,The Final Assignment,9,2,2013-05-24,2013-05-31,1
+1415,Grammar,9,2,2013-09-09,2014-06-03,1
+1537,Creative Writing,9,2,2014-01-13,2014-01-24,1
+1621,"""This I Believe""",9,2,2013-09-10,2013-10-01,1
+1622,Thieves of Ostia,9,2,2014-02-10,2014-03-07,1
+1539,Celebrate the Individual,9,4,2013-09-04,2013-09-18,1
+1540,Peer Leader Training,9,4,2014-02-12,2014-05-21,1
+1543,Windows and Mirrors,9,4,2014-10-01,2014-10-15,1
+1546,Goal Setting,9,4,2014-01-15,2014-02-12,1
+1335,Musical Identity: Intro and Badge of Identity,9,7,2013-09-04,2013-10-18,1
+1339,Musical Identity: Instruments,9,7,2014-04-01,2014-05-30,1
+1344,Musical Identity: Intro to Music Technology,9,7,2013-10-21,2013-12-20,1
+1357,Musical Identity: Music and Film,9,7,2014-01-07,2014-02-28,1
+1302,Backyard Games,9,8,2014-04-14,2014-05-30,1
+1306,Floor Hockey,9,8,2013-12-02,2013-12-20,1
+1422,Flag Football,9,8,2013-09-04,2013-10-04,1
+1425,Indoor Soccer,9,8,2013-10-07,2013-10-25,1
+1576,Pickleball,9,8,2013-10-28,2013-11-29,1
+1419,Good News,9,9,2013-09-01,2014-06-01,1
+1420,Jesus' Passion,9,9,2013-09-01,2014-06-01,1
+1421,Death and Resurrection ,9,9,2013-09-01,2014-06-01,1
+1085,Inside Earth,9,10,2014-09-05,2014-11-20,1
+1252,Weather and Climate,9,10,2014-11-25,2015-01-25,1
+1299,Weather and Climate,9,10,2013-09-07,2013-01-30,1
+1301,Bacteria to Plants,9,10,2013-03-30,2013-06-15,1
+1671,Independent Science Project:  ISP,9,10,2014-01-27,2014-03-10,1
+1145,Rivers Contribute to the Growth of Civilizations,9,11,2012-09-10,2012-09-14,1
+1147,China's First Dynasties,9,11,2012-09-17,2012-10-19,1
+1149,China's Warring Period -- 481 B.C. - 281 B.C.,9,11,2012-10-01,2012-10-19,1
+1151,Chinese Philosophers,9,11,2012-10-22,2012-11-02,1
+1169,China:Silk Road,9,11,2012-10-22,2012-11-06,1
+1170,Chinese Innovations,9,11,2012-10-15,2012-10-19,1
+1171,Ancient Greek Culture,9,11,2012-12-03,2012-12-10,1
+1172,Ancient Greek Leadership,9,11,2013-01-07,2013-01-11,1
+1173,Ancient Greek Heroes,9,11,2012-12-17,2012-12-21,1
+1174,Geography of Rome,9,11,2013-01-28,2013-01-31,1
+1176,Plagiarism,9,11,2012-12-17,2012-12-18,1
+1177,Rome: Early Republic,9,11,2013-01-14,2013-01-21,1
+1178,Rome:Government,9,11,2013-01-21,2013-01-29,1
+1179,Rome: Late Republic,9,11,2013-01-28,2013-02-08,1
+1186,Rome: From Republic to Empire,9,11,2013-01-21,2012-12-28,1
+1187,Roman Empire and Religion,9,11,2013-02-04,2013-02-15,1
+1188,Rome: End of Empire,9,11,2013-02-25,2013-02-28,1
+1189,Islam -- Founding,9,11,2013-02-25,2013-03-01,1
+1190,Islam -- Empires,9,11,2013-03-11,2013-03-15,1
+1191,Europe After Fall Of Rome,9,11,2013-04-01,2013-04-19,1
+1192,Feudalism and Manor Life,9,11,2013-04-22,2013-04-26,1
+1193,Late Middle Ages,9,11,2013-04-15,2013-04-19,1
+1194,Late Middle Ages: Political and Social Change,9,11,2013-04-22,2013-05-10,1
+1197,Siege Engines: Trebouchet,9,11,2013-05-06,2013-05-10,1
+1554,Roman Forum,9,11,2014-02-06,2014-02-12,1
+1058,Order and Organization,9,12,2011-11-08,2011-11-15,1
+1513, Espana (Unit 5),9,12,2013-11-01,2013-12-19,1
+1516,Esatados Unidos (Unit 6),9,12,2014-01-07,2014-02-18,1
+1517,Argentina (Unit 7),9,12,2014-02-19,2014-04-18,1
+1518,Chile (Unit 8),9,12,2014-04-21,2014-06-05,1
+1520,Recuerdas,9,12,2013-09-04,2013-10-25,1
+1308,The Outsiders,10,2,2012-09-01,2012-10-12,1
+1309,Romeo and Juliet,10,2,2012-10-15,2013-01-05,1
+1310,My Brother Sam Is Dead,10,2,2013-01-01,2013-02-15,1
+1311,Jack London,10,2,2013-02-18,2013-03-15,1
+1312,Tom Sawyer,10,2,2013-04-02,2013-05-03,1
+1313,The Giver,10,2,2013-05-06,2013-05-31,1
+1322,Rules of the Game 1,10,2,2012-09-03,2013-06-06,1
+1328,Spelling,10,2,2012-09-03,2013-06-06,1
+1124,7A1 Equations,10,6,2011-09-14,2012-10-05,1
+1224,7A1 Inequalities,10,6,2012-10-08,2012-10-29,1
+1238,7A1 Functions,10,6,2012-10-30,2012-11-16,1
+1248,7A1 Linear Functions,10,6,2012-11-19,2012-12-12,1
+1253,7A2 Introduction to Algebra,10,6,2012-09-07,2012-10-01,1
+1256,7A2 Equations,10,6,2012-10-02,2012-10-23,1
+1266,"7A2 Rates, Ratios and Proportions",10,6,2012-10-24,2012-11-16,1
+1273,7A2 Inequalities,10,6,2012-11-16,2012-12-10,1
+1604,7A1 Systems of Equations,10,6,2013-09-01,2014-06-01,1
+1607,7A1 Exponents and Polynomials,10,6,2013-09-01,2014-06-01,1
+1616,7A1 Factoring Polynomials,10,6,2013-09-01,2014-06-01,1
+1617,7A1 Quadratic Equations,10,6,2013-09-01,2014-06-01,1
+1434,Introduction to Music Technology,10,7,2013-09-04,2014-01-31,1
+1304,Backyard Games,10,8,2014-04-14,2014-05-30,1
+1423,Flag Football,10,8,2013-09-04,2013-10-04,1
+1426,Indoor Soccer,10,8,2013-10-07,2013-10-25,1
+1578,Pickle Ball,10,8,2013-10-28,2013-11-29,1
+1581,Floor Hockey,10,8,2013-12-02,2013-12-20,1
+1068,Judaism,10,9,2013-09-01,2014-06-01,1
+1403,Christianity,10,9,2013-09-01,2014-06-01,1
+1405,Islam,10,9,2013-09-01,2014-06-01,1
+1121,Human Biology,10,10,2014-11-25,2015-01-25,1
+1272,Outdoor laboratory,10,10,2013-09-01,2013-11-01,1
+1300,"Motion, Forces, and Energy",10,10,2013-03-13,2013-06-13,1
+1672,Independent Science Project:  ISP,10,10,2014-01-27,2014-03-10,1
+1181,Civics and American Government,10,11,2012-09-04,2012-10-01,1
+1182,Exploration and Settlement,10,11,2012-10-01,2012-10-22,1
+1183,Creation of the 13 Colonies,10,11,2012-11-05,2012-11-26,1
+1184,Factors Leading to the Revolution,10,11,2012-12-17,2013-01-09,1
+1225,Civil War,10,11,2013-05-01,2013-05-31,1
+1240,Revolutionary War,10,11,2013-01-09,2013-01-30,1
+1379,Creation of the Republic,10,11,2013-09-01,2014-06-01,1
+1381,Launching the New Government,10,11,2013-09-01,2014-06-01,1
+1398,"Moving West, Jackson, and Native Americans",10,11,2013-09-01,2014-06-01,1
+1076,Lujos y Necesidades,10,12,2013-09-01,2014-06-01,1
+1077,Las Vacaciones y el tiempo; Leisure and vacation time,10,12,2011-10-14,2011-11-11,1
+1078,Childhood: ¿Qué te gustaba hacer de pequeño?,10,12,2013-09-01,2014-06-01,1
+1265,¿Cómo es tú escuela?,10,12,2012-09-11,2012-10-11,1
+1120,Fahrenheit 451,11,2,2012-09-03,2012-10-12,1
+1134,Hamlet,11,2,2013-01-28,2013-04-05,1
+1315,Great Gatsby,11,2,2012-10-15,2012-11-16,1
+1317,Catcher in the Rye,11,2,2012-12-03,2013-02-01,1
+1320,To Kill a Mockingbird,11,2,2013-04-08,2013-05-10,1
+1321,Maus: A Survivor's Tale,11,2,2013-05-13,2013-05-31,1
+1325,Rules of the Game 2,11,2,2012-09-03,2013-06-06,1
+1331,Spelling,11,2,2012-09-03,2013-06-06,1
+1284,8G Foundations for Geometry,11,6,2012-09-03,2012-09-21,1
+1529,8G Geometric Reasoning,11,6,2013-09-23,2013-10-15,1
+1589,8G Parallel and Perpendicular Lines,11,6,2013-10-16,2013-11-04,1
+1590,8G Triangle Congruence,11,6,2013-11-05,2013-11-26,1
+1591,8G Properties and Attributes of Triangles,11,6,2013-12-02,2013-12-20,1
+1592,8G Polygons and Quadrilaterals,11,6,2014-01-07,2014-01-30,1
+1593,8G Similarity,11,6,2014-01-31,2014-02-21,1
+1594,8G Right Triangles and Trigonometry,11,6,2014-02-24,2014-03-14,1
+1595,"8G Perimeter, Area and Circumference",11,6,2014-03-31,2014-04-23,1
+1596,8G 3-Dimensional Geometry,11,6,2014-04-24,2014-05-16,1
+1597,8G Circles,11,6,2014-05-19,2014-06-06,1
+1609,Intro to Popular Music: The Rock and Roll Hall of Fame,11,7,2013-09-04,2013-10-29,1
+1636,The 1950's & Prior: Rock and Roll's Origins,11,7,2013-11-01,2013-12-20,1
+1637,The 1960's: Slices of American Pie,11,7,2014-01-06,2014-01-31,1
+1638,The 1970's: Popular Music Goes Electronic,11,7,2014-02-03,2014-02-28,1
+1639,The 1980's: The Launch of Mainstream Pop & Rap,11,7,2014-03-03,2014-04-11,1
+1640,The 1990's & Beyond: Popular Music's Trends & Future,11,7,2014-04-14,2014-05-16,1
+1641,Experimental Music: Pushing the Boundaries,11,7,2014-05-19,2014-06-06,1
+1305,Backyard Games,11,8,2014-04-14,2014-05-30,1
+1424,Flag Football,11,8,2013-09-04,2013-10-04,1
+1427,Indoor Soccer,11,8,2013-10-07,2013-10-25,1
+1579,Pickle Ball,11,8,2013-10-28,2013-11-29,1
+1582,Floor Hockey,11,8,2013-12-02,2013-12-20,1
+1069,Buddhism,11,9,2013-09-01,2014-06-01,1
+1070,Hinduism,11,9,2013-09-01,2014-06-01,1
+1549,Independent Science Project:  ISP,11,10,2014-01-27,2014-03-10,1
+1588,Cells and Heredity,11,10,2013-09-04,2014-01-24,1
+1094,Industrialization of America,11,11,2013-09-01,2014-06-01,1
+1095,World War II,11,11,2013-09-01,2014-06-01,1
+1208,Reconstruction,11,11,2012-09-04,2012-09-25,1
+1209,Westward Expansion,11,11,2012-09-26,2012-10-10,1
+1210,"Urbanization, Immigration and the Growth of Cities",11,11,2013-09-01,2014-06-01,1
+1264,Animal Farm and Communism,11,11,2013-09-01,2014-06-01,1
+1200,Comidas/ Meals,11,12,2012-09-10,2012-10-10,1
+1203,Actividades al aire libre/Outdoors,11,12,2012-10-11,2012-12-14,1
+1204,De compras/shopping,11,12,2013-09-01,2014-06-01,1
+1206,De compras,11,12,2013-01-07,2013-02-07,1
+1211,Accidentes y EnfermedadesCapítulo 9,11,12,2013-02-11,2013-03-11,1
+1212,Películas y TelevisiónCapítulo 10,11,12,2013-03-12,2013-03-26,1
+1214,El Futuro,11,12,2012-03-28,2013-04-11,1
+1215,El pasaporte por favor!Viajes,11,12,2013-04-12,2013-04-26,1
