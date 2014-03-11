@@ -49,6 +49,16 @@ if(isset($_GET["d"]) || isset($_GET["e"])){
 
 //END ENABLE/DISABLE QUERIES
 ?>
+<script>
+	$(document).ready(function() {
+		$('.unit-row').hide();
+		$('.page-1').show(300);
+		$('#pb1').addClass('clicked');
+		$('.pagebutton').click(function () {
+			
+		});
+	});
+</script>
 
 <div id="content-wrapper">
 	
@@ -57,6 +67,16 @@ if(isset($_GET["d"]) || isset($_GET["e"])){
 	<div id="content" class="clearfix">
 		<?php require_once("../lib/filter.php");?>
 		<div id="unit-list">
+			<script>
+				function showPage(pagenum) {
+					var pageclass = ".page-" + pagenum;
+					var buttonid = "#pb" + pagenum;
+					$('.unit-row').hide();
+					$(pageclass).show(300);
+					$('.pagebutton a').removeClass('clicked');
+					$(buttonid).addClass('clicked');	 
+			 	}				
+			</script>
 			
 			<table id="unit-table">
 			
@@ -69,7 +89,6 @@ if(isset($_GET["d"]) || isset($_GET["e"])){
 				
 				<?php	
 					$unit_pages = 1;
-					$perpage = 10;	
 					$units_left = true;
 					while($units_left){
 						$onpage = 0;

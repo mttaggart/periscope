@@ -21,13 +21,15 @@ if(isset($_GET["s"])) {
 $unit_query .= ";";
 
 $unit_result = mysqli_query($con, $unit_query);
+
 ?>
 <script>
 	$(document).ready(function() {
 		$('.unit-row').hide();
 		$('.page-1').show(300);
+		$('#pb1').addClass('clicked');
 		$('.pagebutton').click(function () {
-	
+			
 		});
 	});
 </script>
@@ -46,8 +48,11 @@ $unit_result = mysqli_query($con, $unit_query);
 				<script>
 					function showPage(pagenum) {
 						var pageclass = ".page-" + pagenum;
+						var buttonid = "#pb" + pagenum;
 						$('.unit-row').hide();
-						$(pageclass).show(300);	 
+						$(pageclass).show(300);
+						$('.pagebutton a').removeClass('clicked');
+						$(buttonid).addClass('clicked');	 
 				 	}				
 				</script>
 				<table id="unit-table">
@@ -59,8 +64,7 @@ $unit_result = mysqli_query($con, $unit_query);
 					<th>End Date</th>
 					
 					<?php	
-						$unit_pages = 1;
-						$perpage = 10;	
+						$unit_pages = 1;	
 						$units_left = true;
 						while($units_left){
 							$onpage = 0;
@@ -94,7 +98,7 @@ $unit_result = mysqli_query($con, $unit_query);
 					<ul id="page-list">
 						<?php
 							for($i=1;$i<=$unit_pages;$i++) {
-								echo "<li class =\"pagebutton\"><a class = \"editbutton\" href=\"#page-{$i}\" onclick = \"showPage({$i})\">{$i}</a></li>";	
+								echo "<li class =\"pagebutton\"><a id=\"pb{$i}\" class = \"editbutton\" href=\"#page-{$i}\" onclick = \"showPage({$i})\">{$i}</a></li>";	
 							}
 						?>				
 					

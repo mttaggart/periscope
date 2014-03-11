@@ -234,6 +234,10 @@ text-decoration: underline;
 
 }
 
+.clicked {
+background-color:#00285d; 
+}
+
 #mapping-options{
 float: left;
 margin-left: 20px;

@@ -78,15 +78,15 @@ class Gantti {
     $cellstyle  = 'style="line-height: ' . $this->options['cellheight'] . 'px; height: ' . $this->options['cellheight'] . 'px"';
     $wrapstyle  = 'style="width: ' . $this->options['cellwidth'] . 'px"';
     $totalstyle = 'style="width: ' . (count($this->days)*$this->options['cellwidth']) . 'px"';
-    // start the diagram    
+    // start the diagram     
     $html[] = '<figure class="gantt">';    
 
-    // set a title if available
+    // set a title if available 
     if($this->options['title']) {
       $html[] = '<figcaption>' . $this->options['title'] . '</figcaption>';
     }
 
-    // sidebar with labels
+    // sidebar with labels 
     $html[] = '<aside>';
     $html[] = '<ul class="gantt-labels" style="margin-top: ' . (($this->options['cellheight']*2)+1) . 'px">';
     foreach($this->blocks as $i => $block) {
@@ -95,13 +95,13 @@ class Gantti {
     $html[] = '</ul>';
     $html[] = '</aside>';
 
-    // data section
+    // data section 
     $html[] = '<section class="gantt-data">';
         
-    // data header section
+    // data header section 
     $html[] = '<header>';
 
-    // months headers
+    // months headers 
     $html[] = '<ul class="gantt-months" ' . $totalstyle . '>';
     foreach($this->months as $month) {
       $html[] = '<li class="gantt-month" style="width: ' . ($this->options['cellwidth'] * $month->countDays()) . 'px"><strong ' . $cellstyle . '>' . $month->name() . '</strong></li>';
@@ -119,28 +119,28 @@ class Gantti {
     }                      
     $html[] = '</ul>';    
     
-    // end header
+    // end header 
     $html[] = '</header>';
 
-    // main items
+    // main items 
     $html[] = '<ul class="gantt-items" ' . $totalstyle . '>';
         
     foreach($this->blocks as $i => $block) {
       
       $html[] = '<li class="gantt-item">';
       
-      // days
+      // days 
       $html[] = '<ul class="gantt-days">';
       foreach($this->days as $day) {
 
         $weekend = ($day->isWeekend()) ? ' weekend' : '';
         $today   = ($day->isToday())   ? ' today' : '';
 
-        $html[] = '<li class="gantt-day' . $weekend . $today . '" ' . $wrapstyle . '><span ' . $cellstyle . '>' . $day . '</span></li>';
+        $html[] = '<li class="gantt-day' . $weekend . $today . '" ' . $wrapstyle . '><span ' . $cellstyle . '>' . /*$day .*/ '</span></li>';
       }                      
       $html[] = '</ul>';    
 
-      // the block
+      // the block 
       $days   = (($block['end'] - $block['start']) / $this->seconds);
       $offset = (($block['start'] - $this->first->month()->timestamp) / $this->seconds);
       $top    = round($i * ($this->options['cellheight'] + 1));
