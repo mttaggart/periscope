@@ -136,7 +136,7 @@ if(isset($_GET["d"]) || isset($_GET["e"])){
 				<ul id="page-list">
 					<?php
 						for($i=1;$i<=$unit_pages;$i++) {
-							echo "<li class =\"pagebutton\"><a class = \"editbutton\" href=\"#page-{$i}\" onclick = \"showPage({$i})\">{$i}</a></li>";	
+							echo "<li class =\"pagebutton\"><a id= \"pb{$i}\" class = \"editbutton\" href=\"#page-{$i}\" onclick = \"showPage({$i})\">{$i}</a></li>";	
 						}
 					?>				
 				
