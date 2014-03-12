@@ -35,12 +35,11 @@
 
 <?php
 	require_once("functions.php");
-	
 
 	function filter_url_rebuild($f_month=null, $f_gl=null, $f_s=null)
 	
 	{
-		//produces clean URL for rebuilding in filter links; 
+		//produces clean URL for rebuilding in filter links;  
 		
 		if(!$f_month && isset($_GET["month"])) {
 			$f_month = $_GET["month"];
@@ -61,13 +60,13 @@
 		}
 	
 		$url_rebuild = $url_base;
-		//NEED TO FIX ? vs & 
+		//NEED TO FIX ? vs &  
 		if ($f_month) {
 			$url_rebuild .= "?month={$f_month}";
 		}
 	
 		if ($f_gl) {
-			if (isset($_GET["month"])) {
+			if ($f_month) {
 				$url_rebuild .= "&gl={$f_gl}";
 			} else {
 				$url_rebuild .= "?gl={$f_gl}";
@@ -75,7 +74,7 @@
 		}
 	
 		if ($f_s) {
-			if (isset($_GET["month"]) || isset($_GET["gl"])) {
+			if ($f_month || $f_gl) {
 				$url_rebuild .= "&s={$f_s}";
 			} else {
 				$url_rebuild .= "?s={$f_s}";
@@ -85,18 +84,41 @@
 		return $url_rebuild;
 	}
 
-	//Current Filter setup
+	//Current Filter setup  
 	
-	$current_filters = array();
+	$current_filters = array("Month"=>"None","Subject"=>"None","Grade Level"=>"None");
+	$months = array(
+						"Jan" => 1,
+						"Feb" => 2,
+						"Mar" => 3,
+						"Apr" => 4,
+						"May" => 5,
+						"Jun" => 6,
+						"Jul" => 7,
+						"Aug" => 8,
+						"Sep" => 9,
+						"Oct" => 10,
+						"Nov" => 11,
+						"Dec" => 12);
 	
 	if(isset($_GET["s"])) {
-		array_push($current_filters, "Subject");
+		$s_id = mysql_prep($_GET["s"]);
+		$subject_query = "SELECT * FROM Subjects WHERE S_ID = {$s_id}";
+		$subject_result = mysqli_query($con, $subject_query);
+		$subject_info = mysqli_fetch_assoc($subject_result);
+		$current_filters["Subject"]=$subject_info["shortname"];
+		mysqli_free_result($subject_result);
 	}
 	if(isset($_GET["month"])) {
-		array_push($current_filters, "Month");
+		$current_filters["Month"] = array_flip($months)[$_GET["month"]];
 	}
 	if(isset($_GET["gl"])) {
-		array_push($current_filters, "Grade Level");
+		$gl_id = mysql_prep($_GET["gl"]);
+		$gl_query = "SELECT * FROM GradeLevels WHERE GL_ID = {$gl_id}";
+		$gl_result = mysqli_query($con, $gl_query);
+		$gl_info = mysqli_fetch_assoc($gl_result);
+		$current_filters["Grade Level"]=$gl_info["level"];
+		mysqli_free_result($gl_result);
 	}
 
 ?>
@@ -116,20 +138,6 @@
 			
 			<ul class="filter-list">
 				<?php
-				
-					$months = array(
-								"Jan" => 1,
-								"Feb" => 2,
-								"Mar" => 3,
-								"Apr" => 4,
-								"May" => 5,
-								"Jun" => 6,
-								"Jul" => 7,
-								"Aug" => 8,
-								"Sep" => 9,
-								"Oct" => 10,
-								"Nov" => 11,
-								"Dec" => 12);
 							
 					foreach(array_keys($months) as $month) 
 					
@@ -208,13 +216,9 @@
 			
 			<ul class="filter-list" id="current-filter-list">	
 				<?php
-					if(empty($current_filters)) {
-						echo "<li class=\"menubutton\">None</li>";			
-					} else {
-						foreach($current_filters as $filter) {							
-							echo "<li class=\"menubutton\">{$filter}</li>";					
-						}				
-					}
+					foreach($current_filters as $filter=>$value) {							
+						echo "<li class=\"menubutton\">{$filter}: {$value}</li>";
+					}					
 				?>
 			</ul>		
 		
