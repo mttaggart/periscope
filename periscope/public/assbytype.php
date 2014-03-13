@@ -106,17 +106,7 @@ while ($asstype = mysqli_fetch_assoc($asstype_result)) {
 		
 		
 		</div>
-		<div id="mapping-options" class="clearfix">
-			<h2>Mapping Options</h2>
-			
-			<ul id="mapping-list">
-				<li id="timeline" class="menubutton"><a href="timeline.php">Timeline View</a></li>
-				<li id="keyword" class="menubutton"><a href="keyword.php">Keyword Search</a></li>
-				<li id="browse" class="menubutton"><a href="browse.php">Browse</a></li>
-			</ul>	
-		
-		
-		</div>
+		<?php echo mapping_options(); ?>
 			
 
 	

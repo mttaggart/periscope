@@ -5,9 +5,9 @@ require_once("../lib/sessions.php");
 require_once("../lib/val.php");
 
 
-//if(!logged_in()) {
-//	$_SESSION["errors"] = "Please log in to view this page";
-//	redirect_to("login.php");
+if(!logged_in()) {
+	$_SESSION["errors"] = "Please log in to view this page";
+	redirect_to("login.php");
 }
 
 

@@ -107,19 +107,9 @@ $unit_result = mysqli_query($con, $unit_query);
 			</div>
 			
 			
-			
-		
-		<div id="mapping-options" class="clearfix">
-			<h2>Mapping Options</h2>
-			
-			<ul id="mapping-list">
-				<li id="timeline" class="menubutton"><a href="timeline.php">Timeline View</a></li>
-				<li id="keyword" class="menubutton"><a href="keyword.php">Keyword Search</a></li>
-				<li id="assbytype" class="menubutton"><a href="assbytype.php">Assessment Distribution</a></li>
-			</ul>	
+			<?php echo mapping_options();?>
 		
 		
-		</div>
 	</div>
 
 </div>

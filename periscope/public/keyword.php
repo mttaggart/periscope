@@ -153,17 +153,7 @@ if(isset($_POST["submit"])) {
 				
 			
 			
-		<div id="mapping-options" class="clearfix">
-			<h2>Mapping Options</h2>
-			
-			<ul id="mapping-list">
-				<li id="browse" class="menubutton"><a href="browse.php">Browse</a></li>
-				<li id="timeline" class="menubutton"><a href="timeline.php">Timeline View</a></li>
-				<li id="assbytype" class="menubutton"><a href="assbytype.php">Assessment Distribution</a></li>
-			</ul>	
-		
-		
-		</div>
+		<?php echo mapping_options();?>
 		
 		<div id="results">
 		

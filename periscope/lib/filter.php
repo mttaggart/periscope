@@ -39,7 +39,7 @@
 	function filter_url_rebuild($f_month=null, $f_gl=null, $f_s=null)
 	
 	{
-		//produces clean URL for rebuilding in filter links;  
+		//produces clean URL for rebuilding in filter links
 		
 		if(!$f_month && isset($_GET["month"])) {
 			$f_month = $_GET["month"];
@@ -53,10 +53,14 @@
 			$f_s = $_GET["s"];
 		}
 		
-		if (strpos($_SERVER["REQUEST_URI"],"?")==0) {
-			$url_base = $_SERVER["REQUEST_URI"];
+		if(!$base) {
+			if (strpos($_SERVER["REQUEST_URI"],"?")==0) {
+				$url_base = $_SERVER["REQUEST_URI"];
+			} else {
+				$url_base = substr($_SERVER["REQUEST_URI"],0,strpos($_SERVER["REQUEST_URI"],"?"));
+			}
 		} else {
-			$url_base = substr($_SERVER["REQUEST_URI"],0,strpos($_SERVER["REQUEST_URI"],"?"));
+			$url_base = $base;		
 		}
 	
 		$url_rebuild = $url_base;

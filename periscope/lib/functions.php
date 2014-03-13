@@ -33,7 +33,7 @@ function clean_uri () {
 	}
 }
 
-function url_rebuild($f_month=null, $f_gl=null, $f_s=null)
+function url_rebuild($base=null, $f_month=null, $f_gl=null, $f_s=null)
 	
 {
 	//produces clean URL for rebuilding after adding/deleting;
@@ -50,11 +50,16 @@ function url_rebuild($f_month=null, $f_gl=null, $f_s=null)
 		$f_s = $_GET["s"];
 	}
 	
-	if (strpos($_SERVER["REQUEST_URI"],"?")==0) {
-		$url_base = $_SERVER["REQUEST_URI"];
+	if(!$base) {
+		if (strpos($_SERVER["REQUEST_URI"],"?")==0) {
+			$url_base = $_SERVER["REQUEST_URI"];
+		} else {
+			$url_base = substr($_SERVER["REQUEST_URI"],0,strpos($_SERVER["REQUEST_URI"],"?"));
+		}
 	} else {
-		$url_base = substr($_SERVER["REQUEST_URI"],0,strpos($_SERVER["REQUEST_URI"],"?"));
+		$url_base = $base;		
 	}
+	
 
 	$url_rebuild = $url_base;
 	//NEED TO FIX ? vs &
@@ -79,6 +84,26 @@ function url_rebuild($f_month=null, $f_gl=null, $f_s=null)
 	}
 
 	return $url_rebuild;
+}
+
+function mapping_options() {
+
+	$timeline = url_rebuild($base="timeline.php");
+	$browse = url_rebuild($base="browse.php");
+	$keyword = url_rebuild($base="keyword.php");
+	$assbytype = url_rebuild($base="assbytype.php");
+		
+	$map_div = "<div id=\"mapping-options\" class=\"clearfix\">
+			<h2>Mapping Options</h2>
+		
+			<ul id=\"mapping-list\">
+				<li id=\"browse\" class=\"menubutton\"><a href=\"{$browse}\">Browse Units</a></li>				
+				<li id=\"timeline\" class=\"menubutton\"><a href=\"{$timeline}\">Timeline View</a></li>
+				<li id=\"keyword\" class=\"menubutton\"><a href=\"{$keyword}\">Keyword Search</a></li>
+				<li id=\"assbytype\" class=\"menubutton\"><a href=\"{$assbytype}\">Assessment Distribution</a></li>
+			</ul>	
+		</div>";
+	return $map_div;
 }
 
 function redirect_to($destination) {

@@ -17,7 +17,7 @@ $db_name = "periscope";
 //shouldn't be root in release; install should create a user 
 
 $db_user = "root"; 
-$db_password = "password";
+$db_password = "Umfund1$1";
 
 
 //Site Name
@@ -36,6 +36,9 @@ $assets = array("Essential Questions" => "eq",
 					"Assessments" => "ass");
 					
 $upload_dir = "../uploads/";
+
+//Pagination
+$perpage = 20;
 
 ?> 
 

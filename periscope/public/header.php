@@ -22,7 +22,7 @@
 			require_once("../lib/config.php");
 			shuffle($backgrounds);
 			$bgpath = "../images/bg/" . $backgrounds[0];
-			echo "$('html').css('background-image', 'url({$bgpath})');";
+			echo "$('body').css('background-image', 'url({$bgpath})');";
 		?>
 	
 	});
