@@ -1,14 +1,18 @@
 html{
 
-background-image: url('../images/sw3.jpg');
-background-repeat: no-repeat;
-background-size: 100%;
-background-attachment: fixed;
 
 }
 
 body {
 font-family: "Ubuntu", sans-serif;
+background-image: url('../images/sw3.jpg');
+background-repeat: no-repeat;
+background-size: cover;
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-attachment: fixed;
+
 }
 
 h1, h2, h3, h4{
@@ -197,6 +201,8 @@ background-color: #1ba968;
 .menubutton a {
 font-weight: bold;
 color: white;
+text-align: center;
+text-decoration: none;
 
 }
 
@@ -232,6 +238,10 @@ color: white;
 	
 text-decoration: underline;
 
+}
+
+.clicked {
+background-color:#00285d; 
 }
 
 #mapping-options{
@@ -293,6 +303,7 @@ list-style-type: none;
 display: inline;
 margin-left: 2px;
 margin-right: 2px;
+text-align: center;
 
 }
 
@@ -309,14 +320,18 @@ padding-bottom: 5px;
 
 #slidenav {
 
+display: inline;
 margin-top: 0px;
+padding: 0px 0px 5px 0px;
 
 }
+
 
 #slidenav li {
 
 list-style-type: none;
 display: inline;
+margin: 10px 0px 10px 0px;
 
 }
 
@@ -331,9 +346,10 @@ color: white;
 
 background-color: rgba(0,40,93,.6);
 color: white;
-width: 40%;
-height: 300px;
+width: 60%;
+height: 100%;
 display: inline;
+margin-top:10px;
 float:left;
 overflow-x: hidden;
 

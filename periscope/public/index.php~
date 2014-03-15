@@ -9,7 +9,6 @@ require_once("header.php");
 			<div id="menu-units">
 				<ul id="menu-unit-buttons">
 					<li class="menubutton"><a href="browse.php">Browse Units</a></li>
-					<li class="menubutton"><a href="keyword.php">Keyword Search</a></li>
 					<li class="menubutton"><a href="new-unit.php">New Unit</a></li>
 				</ul>
 			

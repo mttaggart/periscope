@@ -27,9 +27,9 @@ $unit_info = mysqli_fetch_assoc($unit_result);
 
 <div id="content-wrapper">
 
-	<div id="content">		
+	<section id="content">		
 			<div id="content-clearfix" class="clearfix">
-				<div id="unitinfo">
+				<section id="unitinfo">
 					
 					<h2><?php echo $unit_info["Name"];?></h2>	
 						
@@ -47,7 +47,7 @@ $unit_info = mysqli_fetch_assoc($unit_result);
 					
 					<?php echo "<h4><a class= 'menubutton' href='edit-unit.php?u={$unit_uid}'>Edit Unit</a></h4>";?>
 					
-				</div>
+				</section>
 				
 				<ul id="slidenav">
 					<li><a class="menubutton" href="#eq" onclick="clicked('eq');">Essential Questions</a></li>
@@ -58,7 +58,7 @@ $unit_info = mysqli_fetch_assoc($unit_result);
 					<li><a class="menubutton" href="#ass" onclick="clicked('ass');">Assessments</a></li>		
 				</ul>			
 				
-				<div id="assets">
+				<section id="assets">
 				
 				
 				
@@ -107,9 +107,9 @@ $unit_info = mysqli_fetch_assoc($unit_result);
 					?>
 					
 					
-				</div>
+				</section>
 			</div>
-	</div>
+	</section>
 
 </div>
 

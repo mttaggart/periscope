@@ -184,23 +184,6 @@ if(isset($_GET["d"]) || isset($_GET["e"])){
 					?>				
 				
 				</ul>
-				<?php echo "<form id=\"sortselect\" action=\"{$current_url}\" method=\"POST\">";?>
-						<select name="sort" onchange="this.form.submit()">
-							<option>Sort By:</option>
-							<optgroup>
-								<option value="name-asc">Name: Ascending</option>
-								<option value="name-des">Name: Descending</option>
-								<option value="gl-asc">Grade Level: Ascending</option>
-								<option value="gl-des">Grade Level: Descending</option>
-								<option value="s-asc">Subject: Ascending</option>
-								<option value="s-des">Subject: Descending</option>
-								<option value="startdate-asc">Start Date: Ascending</option>
-								<option value="startdate-des">Start Date: Descending</option>
-								<option value="enddate-asc">End Date: Ascending</option>
-								<option value="enddate-des">End Date: Descending</option>
-							</optgroup>
-						</select>			
-					</form>
 			</div>
 
 		</div>

@@ -7,7 +7,10 @@ body {
 font-family: "Ubuntu", sans-serif;
 background-image: url('../images/sw3.jpg');
 background-repeat: no-repeat;
-background-size: 100%;
+background-size: cover;
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
 background-attachment: fixed;
 
 }
@@ -198,6 +201,8 @@ background-color: #1ba968;
 .menubutton a {
 font-weight: bold;
 color: white;
+text-align: center;
+text-decoration: none;
 
 }
 
@@ -224,7 +229,7 @@ background-color: #1ba968;
 
 .editbutton a {
 font-weight: bold;
-
+text-decoration: none;
 color: white;
 
 }
@@ -315,14 +320,18 @@ padding-bottom: 5px;
 
 #slidenav {
 
+display: inline;
 margin-top: 0px;
+padding: 0px 0px 5px 0px;
 
 }
+
 
 #slidenav li {
 
 list-style-type: none;
 display: inline;
+margin: 10px 0px 10px 0px;
 
 }
 
@@ -337,9 +346,10 @@ color: white;
 
 background-color: rgba(0,40,93,.6);
 color: white;
-width: 40%;
-height: 300px;
+width: 60%;
+height: 100%;
 display: inline;
+margin-top:10px;
 float:left;
 overflow-x: hidden;
 

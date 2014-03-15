@@ -4,7 +4,7 @@
 $page_title = "Browse Units";
 require_once("header.php");
 
-$unit_query = "SELECT * FROM Units INNER JOIN GradeLevels ON Units.GradeLevel_id = GradeLevels.GL_ID INNER JOIN Subjects ON Units.Subject_ID = Subjects.S_ID WHERE enabled = 1";
+$unit_query = "SELECT * FROM Units INNER JOIN GradeLevels ON Units.GradeLevel_id = GradeLevels.GL_ID INNER JOIN Subjects ON Units.Subject_ID = Subjects.S_ID WHERE enabled = 1 ";
 if(isset($_GET["month"])) {
 	$unit_query .= " AND (MONTH(StartDate) = {$_GET["month"]} OR MONTH(EndDate) = {$_GET["month"]})";	
 }
@@ -17,10 +17,52 @@ if(isset($_GET["s"])) {
 	$unit_query .= " AND Subject_ID = {$_GET["s"]}";
 }
 
+if(isset($_POST["sort"])) {
+	switch($_POST["sort"]) {
+		case null:
+			break;
+		case "name-asc":
+			$unit_query .= " ORDER BY Name ASC";
+			break;
+		case "name-des":
+			$unit_query .= " ORDER BY Name DESC";
+			break;
+		case "gl-asc":
+			$unit_query .= " ORDER BY GradeLevels.level ASC";
+			break;
+		case "gl-des":
+			$unit_query .= " ORDER BY GradeLevels.level DESC";
+			break;
+		case "s-asc":
+			$unit_query .= " ORDER BY Subjects.shortname ASC";
+			break;
+		case "s-des":
+			$unit_query .= " ORDER BY Subjects.shortname DESC";
+			break;
+		case "startdate-asc":
+			$unit_query .= " ORDER BY StartDate ASC";
+			break;
+		case "startdate-des":
+			$unit_query .= " ORDER BY StartDate DESC";
+			break;			
+		case "enddate-asc":
+			$unit_query .= " ORDER BY EndDate ASC";
+			break;
+		case "enddate-des":
+			$unit_query .= " ORDER BY EndDate DESC";
+			break;												
+		default:
+			break;
+	}
+}
 
 $unit_query .= ";";
 
+//echo $unit_query;
+
 $unit_result = mysqli_query($con, $unit_query);
+
+$current_url = url_rebuild();
 
 ?>
 <script>
@@ -103,6 +145,23 @@ $unit_result = mysqli_query($con, $unit_query);
 						?>				
 					
 					</ul>
+					<?php echo "<form id=\"sortselect\" action=\"{$current_url}\" method=\"POST\">";?>
+						<select name="sort" onchange="this.form.submit()">
+							<option>Sort By:</option>
+							<optgroup>
+								<option value="name-asc">Name: Ascending</option>
+								<option value="name-des">Name: Descending</option>
+								<option value="gl-asc">Grade Level: Ascending</option>
+								<option value="gl-des">Grade Level: Descending</option>
+								<option value="s-asc">Subject: Ascending</option>
+								<option value="s-des">Subject: Descending</option>
+								<option value="startdate-asc">Start Date: Ascending</option>
+								<option value="startdate-des">Start Date: Descending</option>
+								<option value="enddate-asc">End Date: Ascending</option>
+								<option value="enddate-des">End Date: Descending</option>
+							</optgroup>
+						</select>			
+					</form>
 				</div>
 			</div>
 			
