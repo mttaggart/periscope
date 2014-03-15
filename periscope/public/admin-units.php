@@ -98,7 +98,19 @@ if(isset($_GET["d"]) || isset($_GET["e"])){
 		$('.page-1').show(300);
 		$('#pb1').addClass('clicked');
 		$('.pagebutton').click(function () {
-			
+			var nextpage = parseInt($('.clicked').attr('id').substr(2)) + 1;
+			var prevpage = parseInt($('.clicked').attr('id').substr(2)) - 1;
+			var nextlink = "#page-" + nextpage;
+			var prevlink = "#page-" + prevpage;
+			$('#next').attr('href',nextlink);
+			$('#next').attr('onclick','showPage('+nextpage+')');
+			$('#prev').attr('href',prevlink);
+			$('#prev').attr('onclick','showPage('+prevpage+')');
+			if(!$('#pb1').hasClass('clicked')) {
+				$('#prev').show();			
+			} else {
+				$('#prev').hide();			
+			}
 		});
 	});
 </script>
@@ -180,6 +192,10 @@ if(isset($_GET["d"]) || isset($_GET["e"])){
 					<?php
 						for($i=1;$i<=$unit_pages;$i++) {
 							echo "<li class =\"pagebutton\"><a id= \"pb{$i}\" class = \"editbutton\" href=\"#page-{$i}\" onclick = \"showPage({$i})\">{$i}</a></li>";	
+						}
+						if($unit_pages > 1) {
+							echo "<li class =\"pagebutton\"><a id=\"prev\" class = \"editbutton\" href=\"#page-\" onclick=\"\"><</a>";
+							echo "<li class =\"pagebutton\"><a id=\"next\" class = \"editbutton\" href=\"#page-\" onclick=\"\">></a>"; 							
 						}
 					?>				
 				

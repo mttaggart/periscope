@@ -86,8 +86,6 @@ $current_url = url_rebuild();
 			$('#prev').attr('onclick','showPage('+prevpage+')');
 			if(!$('#pb1').hasClass('clicked')) {
 				$('#prev').show();			
-			} else {
-				$('#prev').hide();			
 			}
 		});
 	});

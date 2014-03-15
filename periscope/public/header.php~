@@ -93,7 +93,8 @@ if (mysqli_connect_errno())
 				
 				<ul id="navlinks-main" class="navlinks">
 					<li><a href="index.php">Home</a></li>
-					<li><a href="browse.php">Browse Units</a></li>	
+					<li><a href="browse.php">Browse Units</a></li>
+					<li><a href="keyword.php">Keyword Search</a></li>		
 					<li><a href="new-unit.php">New Unit</a></li>	
 					<li><a href="admin.php">Administration</a></li>	
 				</ul>
