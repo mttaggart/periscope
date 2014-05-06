@@ -1,13 +1,11 @@
 <?php
 $page_title = "New Unit";
 require_once("header.php");
-require_once("../lib/val.php");
+$session->login_check();
 
 
-$grades_query = "SELECT * FROM GradeLevels";
-$grades_result = mysqli_query($con, $grades_query);
-$subjects_query = "SELECT * FROM Subjects ORDER BY shortname";
-$subjects_result = mysqli_query($con, $subjects_query);
+$gradelevels = GradeLevel::find_all();
+$subjects = Subject::find_all();
 
 if (isset($_POST["submit"])) {
 	
@@ -17,75 +15,55 @@ if (isset($_POST["submit"])) {
 	
 	if(empty($errors)) {
 	
-		//Converter for SQL Date format from jQuery datepicker
-		
-		$unit_name = mysql_prep($_POST["name"]);
-		$unit_subject = mysql_prep($_POST["subject"]);
-		$unit_gradelevel = mysql_prep($_POST["gradelevel"]);
-		$startdate = mysql_prep(js_datefix($_POST["startdate"]));
-		$enddate = mysql_prep(js_datefix($_POST["enddate"]));
-	
-		$add_query = "INSERT INTO Units (Name, GradeLevel_id, Subject_id, StartDate, EndDate)
-							VALUES ('{$unit_name}', 
-							{$unit_gradelevel}, 
-							{$unit_subject}, 
-							'{$startdate}', 
-							'{$enddate}'
-							);";
-							
-		if (mysqli_query($con, $add_query)) {
-			
-			//Alert box to indicate unit added.
+            //Converter for SQL Date format from jQuery datepicker
+            $new_unit = new Unit();
+            $new_unit->name = $db->mysql_prep($_POST["name"]);
+            $new_unit->user = $session->user->id;
+            $new_unit->subject = $db->mysql_prep($_POST["subject"]);
+            $new_unit->gradeLevel = $db->mysql_prep($_POST["gradelevel"]);
+            $new_unit->startDate = strtotime($db->mysql_prep($_POST["startdate"]));
+            $new_unit->endDate = strtotime($db->mysql_prep($_POST["enddate"]));
+            $new_unit->comments = $db->mysql_prep($_POST["comments"]);
+            $new_unit->insert();
+            $new_id = $db->last_query_id();
+            redirect_to("view-unit.php?u={$new_id}");
 
-				echo "<script language='javascript'>";
-				echo "alert('Unit " . $unit_name. " added!')";
-				echo "</script>";
-				header("Location: " . "browse.php" );
-		}
 	}
 }
 
 ?>
 
-<div id="content-wrapper">
 
-	<div id="content">
-			
-			<?php list_errors(); ?>
-			
-			<form id="addunit" method="post" action="new-unit.php">
-				<label for="name">Unit Name</label><input type="text" name="name"><br>
-				<label for="gradelevel">Grade Level</label>
-				<select name="gradelevel">
-					<?php 
-						while($row=mysqli_fetch_assoc($grades_result)) 
-						{
-							echo "<option value = '". $row["GL_ID"] . "'>" . $row["level"] . "</option>";					
-						
-						}
-						mysqli_free_result($grades_result);
-					?>
-				</select></br>	
-				
-				<label for="subject">Subject</label>				
-				<select name="subject">	
-					<?php 
-						while($row=mysqli_fetch_assoc($subjects_result)) 
-						{
-							echo "<option value = '". $row["S_ID"] . "'>" . $row["shortname"] . "</option>"; 
-						
-						}
-						mysqli_free_result($subjects_result);
-					?>
-				</select><br>
-				<input id="from" type="text" name="startdate">Start Date</input><br>
-				<input id="to" type="text" name="enddate">End Date</input><br>
-				<input type="submit" name="submit" value="Create Unit">
-			</form>
-	
-	</div>
 
-</div>
+<section id="content">
 
+    <?php list_errors(); ?>
+
+    <form id="addunit" method="post" action="new-unit.php">
+        <label for="name">Unit Name</label><input type="text" name="name"><br>
+        <label for="gradelevel">Grade Level</label>
+        <select name="gradelevel">
+            <?php 
+                foreach($gradelevels as $gradelevel) {
+                    echo "<option value = \"{$gradelevel->id}\">{$gradelevel->level}</option>";
+                }
+            ?>
+        </select></br>	
+
+        <label for="subject">Subject</label>				
+        <select name="subject">	
+            <?php
+                foreach($subjects as $subject) {
+                    echo "<option value = \"{$subject->id}\">{$subject->shortName}</option>";
+                }
+            ?>
+        </select><br>
+        <input id="from" type="text" name="startdate">Start Date</input><br>
+        <input id="to" type="text" name="enddate">End Date</input><br>
+        <textarea name="comments"></textarea>Comments<br>
+        <input type="submit" name="submit" value="Create Unit">
+    </form>
+
+</section>
 
 <?php require_once("footer.php"); ?>

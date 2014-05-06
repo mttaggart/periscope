@@ -35,6 +35,7 @@
 
 <?php
 	require_once("functions.php");
+        require_once("database.php");
 
 	function filter_url_rebuild($f_month=null, $f_gl=null, $f_s=null)
 	
@@ -92,145 +93,139 @@
 	
 	$current_filters = array("Month"=>"None","Subject"=>"None","Grade Level"=>"None");
 	$months = array(
-						"Jan" => 1,
-						"Feb" => 2,
-						"Mar" => 3,
-						"Apr" => 4,
-						"May" => 5,
-						"Jun" => 6,
-						"Jul" => 7,
-						"Aug" => 8,
-						"Sep" => 9,
-						"Oct" => 10,
-						"Nov" => 11,
-						"Dec" => 12);
+                        "Jan" => 1,
+                        "Feb" => 2,
+                        "Mar" => 3,
+                        "Apr" => 4,
+                        "May" => 5,
+                        "Jun" => 6,
+                        "Jul" => 7,
+                        "Aug" => 8,
+                        "Sep" => 9,
+                        "Oct" => 10,
+                        "Nov" => 11,
+                        "Dec" => 12
+                        );
 	
 	if(isset($_GET["s"])) {
-		$s_id = mysql_prep($_GET["s"]);
-		$subject_query = "SELECT * FROM Subjects WHERE S_ID = {$s_id}";
-		$subject_result = mysqli_query($con, $subject_query);
-		$subject_info = mysqli_fetch_assoc($subject_result);
-		$current_filters["Subject"]=$subject_info["shortname"];
-		mysqli_free_result($subject_result);
+            $s_id = $db->mysql_prep($_GET["s"]);
+            $subject_query = "SELECT * FROM Subjects WHERE S_ID = {$s_id}";
+            $subject_result = $db->query($subject_query);
+            $subject_info = mysqli_fetch_assoc($subject_result);
+            $current_filters["Subject"]=$subject_info["shortname"];
+            mysqli_free_result($subject_result);
 	}
 	if(isset($_GET["month"])) {
-		$current_filters["Month"] = array_flip($months)[$_GET["month"]];
+            $current_filters["Month"] = array_flip($months)[$_GET["month"]];
 	}
 	if(isset($_GET["gl"])) {
-		$gl_id = mysql_prep($_GET["gl"]);
-		$gl_query = "SELECT * FROM GradeLevels WHERE GL_ID = {$gl_id}";
-		$gl_result = mysqli_query($con, $gl_query);
-		$gl_info = mysqli_fetch_assoc($gl_result);
-		$current_filters["Grade Level"]=$gl_info["level"];
-		mysqli_free_result($gl_result);
+            $gl_id = $db->mysql_prep($_GET["gl"]);
+            $gl_query = "SELECT * FROM GradeLevels WHERE GL_ID = {$gl_id}";
+            $gl_result = $db->query($gl_query);
+            $gl_info = mysqli_fetch_assoc($gl_result);
+            $current_filters["Grade Level"]=$gl_info["level"];
+            mysqli_free_result($gl_result);
 	}
 
 ?>
 
 
-<div id="filter-container" class="clearfix">
+<section id="filter-container" class="clearfix">
 
-	<div id="filter-toggle" class="menubutton"><a href="#filter-menu">Filter Units<a></div>
-	<div id="filter-clear" class="menubutton"><a href="browse.php">Clear All Filters</a></div>
-	
-	
-	<div id="filter-menu" style="display:block;">
-	
-		<div class="filter-options" id="filter-month" class="clearfix">
-		
-			<h4>By Month</h4>
-			
-			<ul class="filter-list">
-				<?php
-							
-					foreach(array_keys($months) as $month) 
-					
-					{
-						$month_url = filter_url_rebuild($months[$month]);
-						echo "<li class = \"menubutton\">
-								<a href=\"{$month_url}\">{$month}</a>
-								</li>";
-											
-					}
-				
-				?>
-			
-			</ul>
-			
-		</div>
-		
-		<div class="filter-options" id="filter-gradelevel">
-			
-			<h4>By Grade Level</h4>
-			
-			<ul class="filter-list">
-			
-				<?php
-				
-					$gradelevel_query = "SELECT * FROM GradeLevels";
-					$gradelevel_result = mysqli_query($con, $gradelevel_query);
-					
-					while($row = mysqli_fetch_assoc($gradelevel_result))
-					
-					{
-						$gl_url = filter_url_rebuild(null, $row["GL_ID"], null);
-						echo "<li class = \"menubutton\">
-								<a href=\"{$gl_url}\">{$row['level']}</a>
-								</li>";
-					
-					}
-					mysqli_free_result($gradelevel_result);				
-				?>
-			
-			
-			</ul>
+    <a id="filter-toggle" class="button" href="#filter-menu">Filter Units</a>
+    <a id="filter-clear" class="button" href="browse.php">Clear All Filters</a>
 
-		</div>
-		
-		<div class="filter-options" id="filter-subject">
-			
-			<h4>By Subject</h4>
-			
-			<ul class="filter-list">
-			
-				<?php
-				
-					$subject_query = "SELECT * FROM Subjects ORDER BY shortname";
-					$subject_result = mysqli_query($con, $subject_query);
-					
-					while($row = mysqli_fetch_assoc($subject_result)) 
-					
-					{
-						$s_url = filter_url_rebuild(null, null, $f_s=$row["S_ID"]);
-						echo "<li class = \"menubutton\">
-								<a href=\"{$s_url}\">{$row['shortname']}</a>
-								</li>";
-					
-					}
-					mysqli_free_result($subject_result);				
-				?>
-			
-			
-			</ul>
 
-		</div>
+    <nav id="filter-menu" style="display:block;">
+        <h2>Filter Options</h2>
+
+        <section class="filter-options" id="filter-month" class="clearfix">
+
+            <h3>By Month</h3>
+
+            <ul class="filter-list">
+                <?php
+
+                    foreach(array_keys($months) as $month) {
+                        $month_url = filter_url_rebuild($months[$month]);
+                        echo "<li class = \"button\">
+                                <a href=\"{$month_url}\">{$month}</a>
+                              </li>";
+
+                    }
+
+                ?>
+
+            </ul>
+
+        </section>
+
+            <section class="filter-options" id="filter-gradelevel">
+
+                <h3>By Grade Level</h3>
+
+                <ul class="filter-list">
+
+                    <?php
+
+                        $gradelevel_query = "SELECT * FROM GradeLevels";
+                        $gradelevel_result = $db->query($gradelevel_query);
+
+                        while($row = mysqli_fetch_assoc($gradelevel_result)) {
+                            $gl_url = filter_url_rebuild(null, $row["GL_ID"], null);
+                            echo "<li class = \"button\">
+                                    <a href=\"{$gl_url}\">{$row['level']}</a>
+                                  </li>";
+                        }
+                        mysqli_free_result($gradelevel_result);				
+                    ?>
+
+                </ul>
+
+            </section>
+
+            <section class="filter-options" id="filter-subject">
+
+                <h3>By Subject</h3>
+
+                <ul class="filter-list">
+
+                    <?php
+
+                        $subject_query = "SELECT * FROM Subjects ORDER BY shortname";
+                        $subject_result = $db->query($subject_query);
+
+                        while($row = mysqli_fetch_assoc($subject_result)) {
+                            $s_url = filter_url_rebuild(null, null, $f_s=$row["S_ID"]);
+                            echo "<li class = \"button\">
+                                    <a href=\"{$s_url}\">{$row['shortname']}</a>
+                                  </li>";
+
+                        }
+                        mysqli_free_result($subject_result);				
+                    ?>
+
+
+                </ul>
+
+            </section>
 		
-		<div id="current-filters" class="filter-options">
-			<h4>Current Filters: </h4>
-			
-			<ul class="filter-list" id="current-filter-list">	
-				<?php
-					foreach($current_filters as $filter=>$value) {							
-						echo "<li class=\"menubutton\">{$filter}: {$value}</li>";
-					}					
-				?>
-			</ul>		
-		
-		</div>	
+            <section id="current-filters" class="filter-options">
+                <h3>Current Filters: </h3>
+
+                <ul class="filter-list" id="current-filter-list">	
+                    <?php
+                        foreach($current_filters as $filter=>$value) {							
+                            echo "<li class=\"button\">{$filter}: {$value}</li>";
+                        }					
+                    ?>
+                </ul>		
+
+            </section>	
 	
-	</div>
+    </nav>
 	
-</div>
+</section>
 	
 
 

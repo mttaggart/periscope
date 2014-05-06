@@ -8,16 +8,19 @@ Contains:
 	Sitewide functions as needed
 */
 
+//Timezone setting:
+date_default_timezone_set('America/New_York');
+
 $bg_directory = "/var/www/periscope/images/bg";
 $backgrounds = array_slice(scandir($bg_directory),2);
 
-$db_host = "localhost";
-$db_name = "periscope";
+define("DB_HOST", "localhost");
+define("DB_NAME","periscope");
 
 //shouldn't be root in release; install should create a user 
 
-$db_user = "root"; 
-$db_password = "password";
+define("DB_USER", "root"); 
+define("DB_PASS", "password");
 
 
 //Site Name
@@ -34,6 +37,13 @@ $assets = array("Essential Questions" => "eq",
 					"Activities" => "act",
 					"Resources" => "rsc",
 					"Assessments" => "ass");
+					
+$asset_tables = array("EssentialQuestions" => "EQ",
+                      "Content" => "CON",
+                      "Skills" => "SKL",
+                      "Activities" => "ACT",
+                      "Resources" => "RSC",
+                      "Assessments" => "ASS");
 					
 $upload_dir = "../uploads/";
 

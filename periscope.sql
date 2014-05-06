@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Mar 10, 2014 at 02:06 PM
+-- Generation Time: May 06, 2014 at 02:46 AM
 -- Server version: 5.5.35-0ubuntu0.13.10.2
--- PHP Version: 5.5.3-1ubuntu2.1
+-- PHP Version: 5.5.3-1ubuntu2.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -32,20 +32,7 @@ CREATE TABLE IF NOT EXISTS `Activities` (
   `Text` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`ACT_ID`),
   KEY `U_ID` (`U_ID`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `Admins`
---
-
-CREATE TABLE IF NOT EXISTS `Admins` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `username` varchar(30) NOT NULL,
-  `password` varchar(100) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1722 ;
 
 -- --------------------------------------------------------
 
@@ -60,7 +47,7 @@ CREATE TABLE IF NOT EXISTS `Assessments` (
   `AT_ID` int(11) NOT NULL,
   PRIMARY KEY (`ASS_ID`),
   KEY `U_ID` (`U_ID`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=18 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1135 ;
 
 -- --------------------------------------------------------
 
@@ -72,7 +59,7 @@ CREATE TABLE IF NOT EXISTS `AssessmentTypes` (
   `AT_ID` int(11) NOT NULL AUTO_INCREMENT,
   `AT_Text` varchar(30) NOT NULL,
   PRIMARY KEY (`AT_ID`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=13 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=15 ;
 
 -- --------------------------------------------------------
 
@@ -86,7 +73,7 @@ CREATE TABLE IF NOT EXISTS `Content` (
   `Text` varchar(255) NOT NULL,
   PRIMARY KEY (`CON_ID`),
   KEY `U_ID` (`U_ID`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=12 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1578 ;
 
 -- --------------------------------------------------------
 
@@ -100,7 +87,7 @@ CREATE TABLE IF NOT EXISTS `EssentialQuestions` (
   `Text` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`EQ_ID`),
   KEY `U_ID` (`U_ID`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=31 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2117 ;
 
 -- --------------------------------------------------------
 
@@ -127,7 +114,7 @@ CREATE TABLE IF NOT EXISTS `Resources` (
   `Text` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`RSC_ID`),
   KEY `U_ID` (`U_ID`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1180 ;
 
 -- --------------------------------------------------------
 
@@ -141,7 +128,7 @@ CREATE TABLE IF NOT EXISTS `Skills` (
   `Text` varchar(255) CHARACTER SET latin1 DEFAULT NULL,
   PRIMARY KEY (`SKL_ID`),
   KEY `U_ID` (`U_ID`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=49 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1918 ;
 
 -- --------------------------------------------------------
 
@@ -154,7 +141,7 @@ CREATE TABLE IF NOT EXISTS `Subjects` (
   `shortname` varchar(30) CHARACTER SET latin1 NOT NULL,
   `longname` varchar(255) CHARACTER SET latin1 NOT NULL,
   PRIMARY KEY (`S_ID`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=13 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=15 ;
 
 -- --------------------------------------------------------
 
@@ -164,16 +151,32 @@ CREATE TABLE IF NOT EXISTS `Subjects` (
 
 CREATE TABLE IF NOT EXISTS `Units` (
   `U_ID` int(11) NOT NULL AUTO_INCREMENT,
+  `USR_ID` int(30) DEFAULT NULL,
   `Name` varchar(255) DEFAULT NULL,
   `GradeLevel_id` int(11) NOT NULL,
   `Subject_id` int(11) NOT NULL,
   `StartDate` date DEFAULT NULL,
   `EndDate` date DEFAULT NULL,
+  `Comments` text NOT NULL,
   `enabled` tinyint(4) NOT NULL DEFAULT '1',
   PRIMARY KEY (`U_ID`),
   KEY `GradeLevel_id` (`GradeLevel_id`),
   KEY `Subject_id` (`Subject_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=25 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2138 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `Users`
+--
+
+CREATE TABLE IF NOT EXISTS `Users` (
+  `USR_ID` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(30) NOT NULL,
+  `password` varchar(100) NOT NULL,
+  `is_admin` tinyint(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`USR_ID`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=13 ;
 
 --
 -- Constraints for dumped tables

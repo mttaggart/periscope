@@ -15,8 +15,6 @@ function val_presence($field) {
 
 }
 
-
-
 function val_date($datefield) {
 	//check for proper date form as MM/DD/YYYY
 

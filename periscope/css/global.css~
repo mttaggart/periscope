@@ -20,6 +20,14 @@ margin: 0px;
 
 }
 
+article h1 {
+font-size: 1.6em;
+}
+
+article h2 {
+font-size: 1.3em;
+}
+
 form {
 background-color: rgba(0,40,93,.6);
 color: white;
@@ -96,6 +104,10 @@ margin: 0px;
 
 }
 
+#menu-unit-buttons {
+padding:0px;
+}
+
 #content-wrapper {
 
 background-color: rgba(255,255,255,.8) ;
@@ -137,12 +149,12 @@ font-size: 1.1em;
 .unit-row td {
 padding: 3px;
 border-style: solid;
-border-width: 0px 1px 1px 0px;
+border-width: 0px 2px 2px 0px;
 border-color: white;
 }
 
 .unit-row td:last-of-type {
-border-width: 0px 0px 1px 0px;
+border-width: 0px 2px 2px 0px;
 }
 
 .unit-row a {
@@ -184,7 +196,7 @@ clear: both;
 transition: background-color .5s;	
 display: inline;
 background-color: #008348;
-width: 90px;
+#width: 90px;
 text-align: center;
 padding: 5px;
 color: white;
@@ -229,7 +241,7 @@ background-color: #1ba968;
 
 .editbutton a {
 font-weight: bold;
-
+text-decoration: none;
 color: white;
 
 }

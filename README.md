@@ -5,7 +5,7 @@ periscope
 Curriculum Mapping Platform for Independent Schools
 Developed at Princeton Academy of the Sacred Heart, Princeton NJ
 
-VERY EARLY DEVELOPMENT STAGE. You will need:
+Stable Alphs. You will need:
 
 1. Webserver with PHP 5.3+
 2. MySQL
