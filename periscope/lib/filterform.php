@@ -25,6 +25,11 @@
         $unit_query = $session->get_last_query();
     } else {
         $unit_query = "SELECT * FROM Units INNER JOIN Subjects ON Units.Subject_id = Subjects.S_ID INNER JOIN GradeLevels ON Units.GradeLevel_id = GradeLevels.GL_ID WHERE ( enabled = 1";
+        if($_SERVER["REQUEST_URI"] == "/periscope/public/admin-units.php") {
+            $unit_query .= " OR enabled = 0 )";
+        } else {
+            $unit_query .= ")";
+        }
     }
     
     
@@ -36,16 +41,17 @@
     
     if(isset($_POST["filter-clear"])) {
         $unit_query = "SELECT * FROM Units INNER JOIN Subjects ON Units.Subject_id = Subjects.S_ID INNER JOIN GradeLevels ON Units.GradeLevel_id = GradeLevels.GL_ID WHERE ( enabled = 1";
+        if($_SERVER["REQUEST_URI"] == "/periscope/public/admin-units.php") {
+            $unit_query .= " OR enabled = 0 )";
+        } else {
+            $unit_query .= ")";
+    }
         $active_filters = array("months","gradelevels","subjects");
         $session->clear_last_query();
         $session->clear_filters();
     }
     
-    if($_SERVER["REQUEST_URI"] == "/periscope/public/admin-units.php") {
-        $unit_query .= " OR enabled = 0 )";
-    } else {
-        $unit_query .= ")";
-    }
+   
     
     
     if(isset($_POST["submit"])) {
@@ -150,7 +156,7 @@
     /*
      * THIS IS WHAT MAKES THE UNIT SET. THIS RIGHT HERE.
      */
-//    echo $unit_query;
+//    echo $unit_query; 
     $filtered_units = Unit::sql_get_set($unit_query); 
     
 ?>
