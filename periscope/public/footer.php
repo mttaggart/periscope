@@ -2,7 +2,7 @@
     $(document).ready( function () {
         //background selector
         <?php
-            require_once("../lib/config.php");
+            require_once("../lib/cfg.php");
             require_once("../lib/database.php");
             shuffle($backgrounds);
             $bgpath = "../images/bg/" . $backgrounds[0];

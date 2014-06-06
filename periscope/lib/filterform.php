@@ -4,7 +4,7 @@
 <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
 <link rel="stylesheet" type="text/css" href="../css/global.css">
 <?php
-    require_once("config.php");
+    require_once("cfg.php");
     require_once("dbobjects.php");
     $months = array(
                     "Jan" => 1,

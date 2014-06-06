@@ -1,5 +1,5 @@
 <?php
-require_once("config.php");
+require_once("cfg.php");
 require_once("val.php");
 require_once("functions.php");
 require_once("database.php");

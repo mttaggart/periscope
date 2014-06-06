@@ -19,7 +19,7 @@
     <?php
 
         //Connect to periscope database.
-        require_once("../lib/config.php");
+        require_once("../lib/cfg.php");
         require_once("../lib/val.php");
         require_once("../lib/functions.php");
         require_once("../lib/database.php");
