@@ -6,8 +6,8 @@ class Asset extends DBObject {
     public static $table;
     public static $table_prefix;
     public static $insert_columns = array("Text"=>"text",
-                                          "rank"=>"rank",
-                                          "unit" => "U_ID");
+                                          "Rank"=>"rank",
+                                          "U_ID" => "unit");
     public static $type;
     public $unit;
     public $text;
@@ -15,13 +15,13 @@ class Asset extends DBObject {
     
     static public function build_from_sql($info_array) {
         //uses an info array from sql_get or id_get to assign properties 
-        $new_asset = new self();
+        $new_asset = new static();
         $id_row = static::$table_prefix . "_ID";
         $new_asset->id =        (int)$info_array[$id_row];
         $new_asset->unit =      (int)$info_array["U_ID"];
         $new_asset->text =      $info_array["Text"];
 //        $info_array["rank"] ? $new_asset->rank = (int)$info_array["rank"] : 0; 
-//        $new_asset->rank =   $info_array["rank"]; 
+        $new_asset->rank =   $info_array["Rank"]; 
         return $new_asset;
     }
     
@@ -44,7 +44,7 @@ class EssentialQuestion extends Asset {
     public static $table = "EssentialQuestions";
     public static $table_prefix = "EQ";
     public static $label = "Essential Questions";
-    //public static type     
+    //public static type 
 }
 
 class Content extends Asset {

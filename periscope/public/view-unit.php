@@ -70,7 +70,7 @@ if($session->logged_in() && ($session->user->id == $unit->user->id || $session->
             
         
             foreach ($asset_types as $asset_type) {
-
+                
                 echo "<div class = 'asset-container' id = '". strtolower($asset_type::$table_prefix) . "'>" . "<h3>". $asset_type::$label . "</h3>";
                 echo "<ol class = 'asset-list'>";	
                 foreach ($unit->assets[$asset_type] as $asset) {

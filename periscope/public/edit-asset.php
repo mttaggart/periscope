@@ -19,14 +19,19 @@ if ($_GET["a"] === "ass") {
 
     $asset_query = "SELECT * FROM {$asset_table} 
                     INNER JOIN AssessmentTypes ON {$asset_table}.AT_ID = AssessmentTypes.AT_ID 
-                    INNER JOIN Units ON {$asset_table}.U_ID = Units.U_ID WHERE {$asset_table}.U_ID = {$asset_uid};";
+                    INNER JOIN Units ON {$asset_table}.U_ID = Units.U_ID WHERE {$asset_table}.U_ID = {$asset_uid} ORDER BY Rank;";
 } else {
     $asset_query = "SELECT * FROM {$asset_table} 
-                    INNER JOIN Units ON {$asset_table}.U_ID = Units.U_ID WHERE {$asset_table}.U_ID = {$asset_uid};	";
+                    INNER JOIN Units ON {$asset_table}.U_ID = Units.U_ID WHERE {$asset_table}.U_ID = {$asset_uid} ORDER BY Rank;";
 }
+
+$asset_object = $asset_objects[$asset_table];
+
+$assets = $asset_object::sql_get_set($asset_query);
 
 $asset_result = $db->query($asset_query);
 //Post Handling
+
 
 if (isset($_POST["submit"])){
     $required_fields = array("asset-text");
@@ -89,14 +94,19 @@ if(isset($_GET["daid"])) {
 
 <script>
 	$(document).ready(function(){ 
-            $("#asset-list").sortable();
+            $("#asset-list").sortable({
+                cursor: "move",
+                update: function(event, ui) {
+                    var order = $(this).sortable("serialize") + "&type=<?php echo $asset_object?>";
+                    $.post("../lib/reorder.php", order);
+                }
+            });
             $("#asset-list").disableSelection();
             <?php
                 $unit_uid = $db->mysql_prep($_GET["u"]);
-                $unit_query = "SELECT Name FROM Units WHERE Units.U_ID = {$unit_uid}";
-                $unit_info = mysqli_fetch_assoc($db->query($unit_query));
-                echo "$('#page-title h1').text('Edit {$unit_info['Name']}: {$asset_title}');";
-                echo "$('#backbutton').text('Back to {$unit_info['Name']}');";
+                $unit = Unit::id_get($unit_uid);
+                echo "$('#page-title h1').text('Edit {$unit->name}: {$asset_title}');";
+                echo "$('#backbutton').text('Back to {$unit->name}');";
 
             ?>
 	});
@@ -107,26 +117,30 @@ if(isset($_GET["daid"])) {
 <section id="content">
 
     <a class="button" id="backbutton" href=<?php echo "'view-unit.php?u={$_GET["u"]}';"?>>Back to Unit</a>
+    <p><em>Drag the items to change their order</em></p>
     <?php 
         list_errors();
     ?>
 
     <ul id = "asset-list">
         <?php
-            while($row = mysqli_fetch_assoc($asset_result)) {
-                if(isset($_GET["eaid"]) && $row[$asset_id] == $_GET["eaid"]) {
-                    $edit_field = $row["Text"];				
+            
+            foreach($assets as $asset) {
+                if(isset($_GET["eaid"]) && $asset->id == $_GET["eaid"]) {
+                    $edit_field = $asset->text;				
                 }
 
-                echo "<li>" . data_clean($row["Text"]);
+                echo "<li id=\"asset_{$asset->id}\">" . data_clean($asset->text);
                 if ($asset_table == "Assessments") {
-                    echo "<b> Type: " . data_clean($row["AT_Text"]) . "</b>";								
+                    $type = AssessmentType::id_get($asset->ass_type);
+                    echo "<b> Type: " . data_clean($type->text) . "</b>";								
                 }
                 echo " | ";
 
-                echo "<a href='" . substr($_SERVER["REQUEST_URI"],0,strpos($_SERVER["REQUEST_URI"],"&")) . "&a={$_GET['a']}&eaid=" . $row[$asset_id] . "'>Edit</a> " .
-                 "<a href='". substr($_SERVER["REQUEST_URI"],0,strpos($_SERVER["REQUEST_URI"],"&")) . "&a={$_GET['a']}&daid=" . $row[$asset_id] . "'>Remove</a>" . 
+                echo "<a href='" . substr($_SERVER["REQUEST_URI"],0,strpos($_SERVER["REQUEST_URI"],"&")) . "&a={$_GET['a']}&eaid=" . $asset->id . "'>Edit</a> " .
+                 "<a href='". substr($_SERVER["REQUEST_URI"],0,strpos($_SERVER["REQUEST_URI"],"&")) . "&a={$_GET['a']}&daid=" . $asset->id . "'>Remove</a>" . 
                   "</li>";
+                
             }
         ?>
 
@@ -136,9 +150,9 @@ if(isset($_GET["daid"])) {
     <?php 				
 
         if(isset($_GET["eaid"])) {
-            $action_url = "edit-asset.php?u={$asset_uid}&a={$_GET['a']}&eaid={$_GET['eaid']}";			
+            $action_url = "edit-asset.php?u={$unit->id}&a={$_GET['a']}&eaid={$_GET['eaid']}";			
         } else{
-            $action_url = "edit-asset.php?u={$asset_uid}&a={$_GET['a']}";
+            $action_url = "edit-asset.php?u={$unit->id}&a={$_GET['a']}";
         }				
         echo "<form id='editasset' method='post' action='{$action_url}'>";
     ?>
@@ -149,13 +163,11 @@ if(isset($_GET["daid"])) {
         //extra fields for Assessment Type 
 
         if($_GET["a"] === "ass") {
-            $at_query = "SELECT * FROM AssessmentTypes ORDER BY AT_Text;";
-            $at_result = $db->query($at_query);
+            $asstypes = AssessmentType::find_all();
             echo "<select id=\"assessment-type\" name=\"assessment-type\">";
-            while($at_row = mysqli_fetch_assoc($at_result)) {
-                echo "<option value = '{$at_row['AT_ID']}'>{$at_row['AT_Text']}</option>";
+            foreach($asstypes as $asstype) {
+                echo "<option value = '{$asstype->id}'>{$asstype->text}</option>";
             }
-            mysqli_free_result($at_result);
             echo "</select>";	
             echo "<label for=\"assessment-type\">Assessment Type</label>";		
         }

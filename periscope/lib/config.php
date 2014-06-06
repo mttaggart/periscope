@@ -44,6 +44,13 @@ $asset_tables = array("EssentialQuestions" => "EQ",
                       "Activities" => "ACT",
                       "Resources" => "RSC",
                       "Assessments" => "ASS");
+
+$asset_objects = array("EssentialQuestions" => "EssentialQuestion",
+                      "Content" => "Content",
+                      "Skills" => "Skill",
+                      "Activities" => "Activity",
+                      "Resources" => "Resource",
+                      "Assessments" => "Assessment");
 					
 $upload_dir = "../uploads/";
 

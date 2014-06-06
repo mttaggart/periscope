@@ -188,7 +188,7 @@ class Unit extends DBObject {
     
     public function attach_asset($asset_type) {
         require_once("assets.php");
-        $asset_query = "SELECT * FROM " . $asset_type::$table . " WHERE U_ID = {$this->id}";
+        $asset_query = "SELECT * FROM " . $asset_type::$table . " WHERE U_ID = {$this->id} ORDER BY Rank";
         $this->assets[$asset_type] = $asset_type::sql_get_set($asset_query);
         
     }
