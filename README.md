@@ -5,12 +5,13 @@ periscope
 Curriculum Mapping Platform for Independent Schools
 Developed at Princeton Academy of the Sacred Heart, Princeton NJ
 
-Stable Alphs. You will need:
+Stable Alpha. You will need:
 
 1. Webserver with PHP 5.3+
 2. MySQL
 
-SQL File to build tables is included, but you will need to create the 'periscope' Database and change the username/passwords to your own. (in config.php)
+SQL File to build tables is included, but you will need to create the 'periscope' Database and change the username/passwords to your own. (in cfg.php).
+
 
 =======
 ABOUT

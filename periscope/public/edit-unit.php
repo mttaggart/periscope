@@ -10,7 +10,7 @@ $unit = Unit::id_get($unit_uid);
 $gradelevels = GradeLevel::find_all();
 $subjects = Subject::find_all();
 $startDate =  $unit->startDate > 0 ? date("m/d/y", $unit->startDate) : "None";
-$endDate =  $unit->startDate > 0 ? date("m/d/y", $unit->startDate) : "None";
+$endDate =  $unit->endDate > 0 ? date("m/d/y", $unit->endDate) : "None";
 
 if (isset($_POST["submit"])){
 	

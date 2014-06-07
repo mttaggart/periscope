@@ -28,13 +28,13 @@ if (isset($_POST["submit"])){
                         $unit_count = 0;
                          while($data = fgetcsv($work_file, 1000, ",")) {
                             $new_unit = new Unit();
-                            $new_unit->user = (int)$data[0];
-                            $new_unit->name = $data[1];
-                            $new_unit->gradeLevel = (int)$data[2];
-                            $new_unit->subject = (int)$data[3];
-                            $new_unit->startDate = $data[4];
-                            $new_unit->endDate = $data[5];
-                            $new_unit->comments = !empty($data[6]) ? $data[6] : "";
+                            $new_unit->user = (int)$db->mysql_prep($data[0]);
+                            $new_unit->name = $db->mysql_prep($data[1]);
+                            $new_unit->gradeLevel = (int)$db->mysql_prep($data[2]);
+                            $new_unit->subject = (int)$db->mysql_prep($data[3]);
+                            $new_unit->startDate = $db->mysql_prep($data[4]);
+                            $new_unit->endDate = $db->mysql_prep($data[5]);
+                            $new_unit->comments = !empty($db->mysql_prep($data[6])) ? $db->mysql_prep($data[6]) : "";
                             $new_units[] = $new_unit;
                             $unit_count++;
                         }
@@ -44,16 +44,20 @@ if (isset($_POST["submit"])){
                             echo "<p style='color:white;'>File uploaded!</p>";
                         }
                     } else {
+                        
                         $asset_table = $db->mysql_prep($_POST["table"]);
+                        echo "Doing Asset: {$asset_table}";
                         $new_assets = array();
                         $asset_count = 0;
                         while($data = fgetcsv($work_file, 1000, ",")) {
                             $new_asset = new $asset_table();
-                            $new_asset->id = $data[0];
-                            $new_asset->text = $data[1];
-                            if($asset_table == "Assessments") {
-                                $new_asset->ass_type = $data[2];
+                            $new_asset->unit = (int)$db->mysql_prep($data[0]);
+                            $new_asset->text = $db->mysql_prep($data[1]);
+                            $new_asset->rank = (int)$db->mysql_prep($data[2]);
+                            if(get_class($new_asset) == "Assessment") {
+                                $new_asset->ass_type = (int)$db->mysql_prep($data[3]);
                             }
+                            $new_assets[] = $new_asset;
                             $asset_count++;
                         }
                         foreach($new_assets as $new_asset) {
@@ -114,9 +118,11 @@ if (isset($_POST["submit"])){
         <table>
             <th>U_ID</th>
             <th>Text</th>
+            <th>Rank</th>
             <tr>
                 <td>INT</td>
-                <td>VARCHAR(255)</td>			
+                <td>VARCHAR(255)</td>
+                <td>INT</td>
             </tr>			
         </table>
         <input id="file" type="file" name="file"></input>

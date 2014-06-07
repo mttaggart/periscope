@@ -8,6 +8,9 @@ Contains:
 	Sitewide functions as needed
 */
 
+//error reporting disabled
+error_reporting(0);
+
 //Timezone setting:
 date_default_timezone_set('America/New_York');
 

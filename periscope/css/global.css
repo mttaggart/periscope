@@ -168,7 +168,7 @@ article#intro>h2 {
 
 #unit-list {
     float: left;
-    width: 60%;
+    width: 100%;
     background-color: rgba(0,40,93,.6);
     margin-top: 2px;
     margin-bottom: 2px;

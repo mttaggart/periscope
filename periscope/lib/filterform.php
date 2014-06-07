@@ -305,11 +305,11 @@
 
                 });
 		<?php
-                    if(isset($active_filters)) {
-                        foreach($active_filters as $active_filter=>$values) {
-                            if(!empty($active_filter)) {
-                                $filter_name = strval($active_filter);
-                                if(!empty($values)) {
+                    
+                    foreach($active_filters as $active_filter=>$values) {
+                        if($active_filter) {
+                            $filter_name = strval($active_filter);
+                            if($values) {
                                 foreach($values as $value) {
                                    $checkbox = "#filter-{$filter_name} .filter-check[value='{$value}']";
                                    $selector = "#filter-{$filter_name} .filter-check[value='{$value}'] + label";
@@ -319,11 +319,11 @@
                                    echo "var newFilter = \"<li id=\" + $(\"{$selector}\").attr(\"id\") + \"-active class='button'>\" + $(\"{$selector}\").html() + \"</li>\";";
                                    echo "$(\"#current-filter-list\").html(currentFilters + newFilter);";
                                 }   
-                               }
-                               
-                            }
-                        }                       
-                    }
+                           }
+
+                        }
+                    }                       
+                    
 
                 
 		?>

@@ -79,6 +79,10 @@ class Assessment extends Asset {
     public static $table = "Assessments";
     public static $table_prefix = "ASS";
     public static $label = "Assessments";
+    public static $insert_columns = array("Text"=>"text",
+                                          "Rank"=>"rank",
+                                          "U_ID" => "unit",
+                                          "AT_ID"=>"ass_type");
     //public static type
     public $ass_type;
     

@@ -6,7 +6,7 @@ $unit_uid = $db->mysql_prep($_GET["u"]);
 $unit = Unit::id_get($unit_uid);
 $unit->attach_all_assets();
 $startDate =  $unit->startDate > 0 ? date("m/d/y", $unit->startDate) : "None";
-$endDate =  $unit->startDate > 0 ? date("m/d/y", $unit->startDate) : "None";
+$endDate =  $unit->startDate > 0 ? date("m/d/y", $unit->endDate) : "None";
 if($session->logged_in() && ($session->user->id == $unit->user->id || $session->user->is_admin)) {
     
     $my_unit = true;
