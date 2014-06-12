@@ -39,37 +39,28 @@ if (isset($_POST["submit"])){
     if(empty($errors)) {
         $asset_text = $db->mysql_prep($_POST["asset-text"]);
         
+        
         if(isset($_GET["eaid"])) {
+            
             $asset_eaid = $db->mysql_prep($_GET["eaid"]);
-            $update_query = "UPDATE {$asset_table} SET Text = '{$asset_text}' ";
-            
-            if($_GET["a"] === "ass") {
-                $assessment_type = $db->mysql_prep($_POST["assessment-type"]); 					
-                $update_query .= ", AT_ID = {$assessment_type} ";
-            }
-            
-            $update_query .= "WHERE {$asset_id} = {$asset_eaid};";			
-
-            if ($db->query($update_query)) {
-                mysqli_free_result($asset_result);
-                header("Location: " . clean_uri() . "?u={$asset_uid}&a={$_GET['a']}");
-            } 
+            $working_asset = $asset_object::id_get($asset_eaid);
+            $working_asset->text = $asset_text;
+            $working_asset->unit = $asset_uid;
+            if(get_class($new_asset) == "Assessment") {
+                $new_asset->ass_type = (int)$db->mysql_prep($_POST["assessment-type"]); 					
+            }	         
+            $working_asset->update(); 
+            redirect_to("edit-asset.php?u={$asset_uid}&a={$_GET['a']}");
 
         }  else {
-
-            if($_GET["a"] === "ass") {
-                $assessment_type = $db->mysql_prep($_POST["assessment-type"]); 
-                $new_asset_query = "INSERT INTO {$asset_table} (U_ID, Text, AT_ID)
-                                    VALUES ({$asset_uid}, '{$asset_text}', {$assessment_type});";
-            } else {
-                $new_asset_query = "INSERT INTO {$asset_table} (U_ID, Text)
-                                    VALUES ({$asset_uid}, '{$asset_text}');";
-            } 
-
-            if ($db->query($new_asset_query)) {
-                mysqli_free_result($asset_result);
-                header("Location: " . clean_uri() . "?u={$asset_uid}&a={$_GET['a']}");
+            $new_asset = new $asset_object();
+            $new_asset->unit = $asset_uid;
+            $new_asset->text = $asset_text;
+            if(get_class($new_asset) == "Assessment") {
+                $new_asset->ass_type = $db->mysql_prep($_POST["assessment-type"]); 					
             }
+            $new_asset->insert();
+            redirect_to("edit-asset.php?u={$asset_uid}&a={$_GET['a']}");
         }
     }
 }
@@ -77,17 +68,9 @@ if (isset($_POST["submit"])){
 
 if(isset($_GET["daid"])) {
     $asset_daid = $db->mysql_prep($_GET["daid"]);
-    $remove_query = "DELETE FROM {$asset_table} WHERE {$asset_id} = {$asset_daid};";
-
-    if ($db->query($remove_query)){
-
-        echo "<script language='javascript'>";
-        echo "alert('". $asset_title . " deleted!');";
-        echo "</script>";
-        //Split off aid for redirect to avoid infinite loop
-
-        header("Location: " . substr($_SERVER["REQUEST_URI"], 0 , strrpos($_SERVER["REQUEST_URI"], "&")));	
-    }	
+    $delete_asset = $asset_object::id_get($asset_daid);
+    $delete_asset->delete();
+    redirect_to("edit-asset.php?u={$asset_uid}&a={$_GET['a']}");
 }
 
 ?>

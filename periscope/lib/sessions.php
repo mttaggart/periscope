@@ -66,7 +66,7 @@ class Session {
        $signin = User::sql_get_username($username);
        if($signin->username == $username) {
            if(User::password_check($password, $signin->password)) {
-               echo "password!";
+               echo "password checks";
                $this->logged_in = true;
                $_SESSION["logged_in"] = true;
                $this->user = $signin;

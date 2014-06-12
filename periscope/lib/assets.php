@@ -11,7 +11,7 @@ class Asset extends DBObject {
     public static $type;
     public $unit;
     public $text;
-    public $rank;
+    public $rank = 0;
     
     static public function build_from_sql($info_array) {
         //uses an info array from sql_get or id_get to assign properties 
@@ -21,7 +21,7 @@ class Asset extends DBObject {
         $new_asset->unit =      (int)$info_array["U_ID"];
         $new_asset->text =      $info_array["Text"];
 //        $info_array["rank"] ? $new_asset->rank = (int)$info_array["rank"] : 0; 
-        $new_asset->rank =   $info_array["Rank"]; 
+        $new_asset->rank =   (int)$info_array["Rank"]; 
         return $new_asset;
     }
     

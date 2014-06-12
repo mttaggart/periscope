@@ -1,8 +1,6 @@
 <?php
 $page_title = "Manage Users";
 require_once("header.php");
-require_once("../lib/sessions.php");
-require_once("../lib/val.php");
 $session->login_check();
 
 $users = User::find_all();
@@ -16,7 +14,7 @@ if (isset($_POST["submit"])){
 	val_presences($required_fields);
 	if(empty($errors)) {
             $username = $db->mysql_prep($_POST["username"]);
-            $password = User::password_encrypt($_POST["password"]);
+            $password = $db->mysql_prep($_POST["password"]);
             
             if(isset($_POST["is-admin"])) {
                 $is_admin = 1;
@@ -28,7 +26,7 @@ if (isset($_POST["submit"])){
                 $edit_id = $db->mysql_prep($_GET["e"]);
                 $edit_user = User::id_get($edit_id);
                 $edit_user->username = $username;
-                $edit_user->password = $password;
+                $edit_user->password = $edit_user->password_encrypt($password);
                 $edit_user->is_admin = $is_admin;
                 $edit_user->update();
                 redirect_to("admin-users.php");
@@ -39,8 +37,8 @@ if (isset($_POST["submit"])){
                 $new_user->username = $username;
                 $new_user->password = $password;
                 $new_user->is_admin = $is_admin;
-                $new_user->insert();
-                redirect_to("admin-users.php");
+                $new_user->insert(); 
+              redirect_to("admin-users.php");
 
             }
 	}
@@ -50,7 +48,7 @@ if(isset($_GET["d"])) {
     $delete_id = $db->mysql_prep($_GET["d"]);    
     $delete_user = User::id_get($delete_id);
     $delete_user->delete();
-//    redirect_to("admin-users.php");
+    redirect_to("admin-users.php");
 }
 
 
