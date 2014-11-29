@@ -1,7 +1,7 @@
 <?php
 
 class Filter {
-     public static $active_filters = array();
+    public static $active_filters = array();
     public $id;
     public $label;
     

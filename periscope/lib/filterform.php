@@ -1,11 +1,4 @@
-<?php require_once("sessions.php"); ?>
-<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
-<script src="../js/jquery.js"></script>
-<script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
-<link rel="stylesheet" type="text/css" href="../css/global.css">
 <?php
-    require_once("cfg.php");
-    require_once("dbobjects.php");
     $months = array(
                     "Jan" => 1,
                     "Feb" => 2,
@@ -163,18 +156,17 @@
 
 
 
-<section id="filter-container" class="clearfix">
+<div id="filter-container">
 
-    <a id="filter-toggle" class="button" href="#filter-menu">Filter Units</a>
+    <span id="filter-toggle" class="button">Filter Units</span>
     <form id="filter-clear" action=<?php echo "\"{$_SERVER['REQUEST_URI']}\"";?> method="POST">
         <input type="submit" name="filter-clear" value="Clear Filters" id="filter-clearer" class="button"></input>
     </form>
 
-
-    <form id="filter-menu" style="display:block;" action=<?php echo "\"{$_SERVER['REQUEST_URI']}\"";?> method="POST">
+    <form id="filter-menu" action=<?php echo "\"{$_SERVER['REQUEST_URI']}\"";?> method="POST">
         <h2>Filter Options</h2>
 
-        <section class="filter-options" id="filter-months" class="clearfix">
+        <div class="filter-options" id="filter-months" >
 
             <h3>By Month</h3>
 
@@ -193,99 +185,95 @@
 
             </ul>
 
-        </section>
+        </div>
 
-            <section class="filter-options" id="filter-gradelevels">
+        <div class="filter-options" id="filter-gradelevels">
 
-                <h3>By Grade Level</h3>
+            <h3>By Grade Level</h3>
 
-                <ul class="filter-list">
+            <ul class="filter-list">
 
-                    <?php
-                        $gradelevels = GradeLevel::find_all();
+                <?php
+                    $gradelevels = GradeLevel::find_all();
 
-                        foreach($gradelevels as $gradelevel) {
-                            echo "<li>
-                                <input class=\"filter-check\" id=\"{$gradelevel->level}\" type = \"checkbox\" value=\"{$gradelevel->id}\" name=\"gradelevels[]\">
-                                <label id=\"{$gradelevel->level}-label\" class=\"button\" for=\"{$gradelevel->level}\">{$gradelevel->level}</a>
-                              </li>";
-                        }				
-                    ?>
+                    foreach($gradelevels as $gradelevel) {
+                        echo "<li>
+                            <input class=\"filter-check\" id=\"{$gradelevel->level}\" type = \"checkbox\" value=\"{$gradelevel->id}\" name=\"gradelevels[]\">
+                            <label id=\"{$gradelevel->level}-label\" class=\"button\" for=\"{$gradelevel->level}\">{$gradelevel->level}</a>
+                          </li>";
+                    }				
+                ?>
 
-                </ul>
+            </ul>
 
-            </section>
+        </div>
 
-            <section class="filter-options" id="filter-subjects">
+        <div class="filter-options" id="filter-subjects">
 
-                <h3>By Subject</h3>
+            <h3>By Subject</h3>
 
-                <ul class="filter-list">
+            <ul class="filter-list">
 
-                    <?php
+                <?php
 
-                        $subject_query = "SELECT * FROM Subjects ORDER BY shortname";
-                        $subjects = Subject::sql_get_set($subject_query);
+                    $subject_query = "SELECT * FROM Subjects ORDER BY shortname";
+                    $subjects = Subject::sql_get_set($subject_query);
 
-                        foreach($subjects as $subject) {
-                            $label_text = str_replace(".", "", $subject->shortName);
-                            $label_id = str_replace(" ","-",$label_text);
-                            echo "<li>
-                                <input class=\"filter-check\" id=\"{$label_id}\" type = \"checkbox\" value=\"{$subject->id}\" name=\"subjects[]\">
-                                <label id=\"{$label_id}-label\" class=\"button\" for=\"{$label_id}\">{$label_text}</a>
-                              </li>";
+                    foreach($subjects as $subject) {
+                        $label_text = str_replace(".", "", $subject->shortName);
+                        $label_id = str_replace(" ","-",$label_text);
+                        echo "<li>
+                            <input class=\"filter-check\" id=\"{$label_id}\" type = \"checkbox\" value=\"{$subject->id}\" name=\"subjects[]\">
+                            <label id=\"{$label_id}-label\" class=\"button\" for=\"{$label_id}\">{$label_text}</a>
+                          </li>";
 
-                        }				
-                    ?>
+                    }				
+                ?>
 
 
-                </ul>
+            </ul>
 
-            </section>
+        </div>
 		
-            <section id="current-filters" class="filter-options">
-                <h3>Current Filters: </h3>
+        <div id="current-filters" class="filter-options">
+            <h3>Current Filters: </h3>
 
-                <ul class="filter-list" id="current-filter-list">	
-                    
-                </ul>
-                
+            <ul class="filter-list" id="current-filter-list">	
 
-            </section>
+            </ul>
+
+
+        </div>
         
-            <select name="sort" class="button">
-                <option>Sort By:</option>
-                <optgroup>
-                    <option value="name-asc">Name: Ascending</option>
-                    <option value="name-des">Name: Descending</option>
-                    <option value="gl-asc">Grade Level: Ascending</option>
-                    <option value="gl-des">Grade Level: Descending</option>
-                    <option value="s-asc">Subject: Ascending</option>
-                    <option value="s-des">Subject: Descending</option>
-                    <option value="startdate-asc">Start Date: Ascending</option>
-                    <option value="startdate-des">Start Date: Descending</option>
-                    <option value="enddate-asc">End Date: Ascending</option>
-                    <option value="enddate-des">End Date: Descending</option>
-                </optgroup>
-            </select>
+        <select name="sort" class="button">
+            <option>Sort By:</option>
+            <optgroup>
+                <option value="name-asc">Name: Ascending</option>
+                <option value="name-des">Name: Descending</option>
+                <option value="gl-asc">Grade Level: Ascending</option>
+                <option value="gl-des">Grade Level: Descending</option>
+                <option value="s-asc">Subject: Ascending</option>
+                <option value="s-des">Subject: Descending</option>
+                <option value="startdate-asc">Start Date: Ascending</option>
+                <option value="startdate-des">Start Date: Descending</option>
+                <option value="enddate-asc">End Date: Ascending</option>
+                <option value="enddate-des">End Date: Descending</option>
+            </optgroup>
+        </select>
         
         <input class="button" type="submit" name="submit" value="Apply">
 	
     </form>
+    
+    <h2 id="filter-menu">Thing thig thing</h2>
 	
-</section>
+</div>
 
 <script type="text/javascript">
 
-	$(document).ready(function() {
-		$("#filter-menu").hide();
-                    
+	$(document).ready(function() {                
 		$("#filter-toggle").on("click", function () {
-			$("#filter-menu").slideToggle(100, "linear", function () {
-                            if ($("#filter-menu").is(":visible")) {
-                                $("#filter-menu").css("display","inline");
-                            }
-			});
+                    $("#filter-menu").slideToggle();
 		});
                 $("#filter-clearer").on("click", function () {
                     $("#filter-clear").submit();
@@ -320,14 +308,9 @@
                                    echo "$(\"#current-filter-list\").html(currentFilters + newFilter);";
                                 }   
                            }
-
                         }
-                    }                       
-                    
-
-                
-		?>
-        
+                    }                                      
+		?>        
         });
 
 </script>

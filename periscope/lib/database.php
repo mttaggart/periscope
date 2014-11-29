@@ -5,6 +5,27 @@ class MySQLDatabase {
     private $connection = null;
     private $connected = false;
     
+    public static function create($db_host, $db_name, $db_user, $db_pass){
+        $create_connection = mysqli_connect($db_host, $db_user, $db_pass);
+
+        if (mysqli_connect_errno()) { 	
+            die("Database connection error: " . mysqli_connect_error() . " (" . mysqli_connect_errno() . ")");		
+        } else {
+            echo "<p>Connected!</p>";
+        }
+        
+        $create_query = "CREATE DATABASE IF NOT EXISTS `{$db_name}` DEFAULT "
+        . "CHARACTER SET utf8 COLLATE utf8_general_ci;";
+        
+        if(mysqli_query($connection,$create_query)){
+            echo "<p>Database {$db_name} created!</p>";
+        }
+        
+        $connection = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
+        
+        return $connection;
+    }
+    
     public function __construct() {
         $this->connect();
     }
@@ -136,6 +157,5 @@ class MySQLDatabase {
 
 }
 
-$db = new MySQLDatabase();
-$database =& $db;
+
 ?>

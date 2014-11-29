@@ -14,20 +14,13 @@ error_reporting(0);
 //Timezone setting:
 date_default_timezone_set('America/New_York');
 
-$bg_directory = "/var/www/periscope/images/bg";
-$backgrounds = array_slice(scandir($bg_directory),2);
-
 define("DB_HOST", "localhost");
 define("DB_NAME","periscope");
-
-//shouldn't be root in release; install should create a user 
-
 define("DB_USER", "root"); 
-define("DB_PASS", "password");
+define("DB_PASS", "Umfund1$1");
+define("SCHOOL_NAME", "Demo School");
 
-
-//Site Name
-
+//Site Details
 $site_name = "Periscope Curriculum Mapping";
 $banner_name = "Periscope";
 $banner_subtitle = "Curriculum Mapping System";
@@ -39,21 +32,24 @@ $assets = array("Essential Questions" => "eq",
 					"Skills" => "skl",
 					"Activities" => "act",
 					"Resources" => "rsc",
-					"Assessments" => "ass");
+					"Assessments" => "ass",
+                                        "Standards" => "std");
 					
 $asset_tables = array("EssentialQuestions" => "EQ",
                       "Content" => "CON",
                       "Skills" => "SKL",
                       "Activities" => "ACT",
                       "Resources" => "RSC",
-                      "Assessments" => "ASS");
+                      "Assessments" => "ASS",
+                      "Standards" => "STD");
 
 $asset_objects = array("EssentialQuestions" => "EssentialQuestion",
                       "Content" => "Content",
                       "Skills" => "Skill",
                       "Activities" => "Activity",
                       "Resources" => "Resource",
-                      "Assessments" => "Assessment");
+                      "Assessments" => "Assessment",
+                      "Standards" => "Standard");
 					
 $upload_dir = "../uploads/";
 

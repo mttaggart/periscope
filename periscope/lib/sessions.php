@@ -2,6 +2,9 @@
 require_once("cfg.php");
 require_once("database.php");
 require_once("dbobjects.php");
+$db = new MySQLDatabase();
+$database =& $db;
+
 
 class Session {
    private $logged_in=false;
@@ -30,6 +33,12 @@ class Session {
        if(!$this->logged_in) {
            redirect_to("login.php");
        } 
+   }
+   
+   public function admin_login_check(){
+       if($this->user->is_admin != 1) {
+           redirect_to("login.php");
+       }
    }
        
    public function set_last_query($query) {

@@ -1,5 +1,5 @@
 <?php
-require_once("../lib/database.php");
+require_once("database.php");
 
 /*
  * Contains Object definitions for anything coming straight out of the database. Includes:
@@ -106,7 +106,7 @@ class DBObject {
                 if (is_string($this->$property)) {
                    $update_query .=  " '{$this->$property}', "; 
                 } elseif ($property == "startDate" || $property == "endDate") {
-                   $update_query .= " " . date("Y-m-d", $this->$property) . ", ";             
+                   $update_query .= " '" . strftime("%Y-%m-%d", $this->$property) . "', ";             
                 } else {
                    $update_query .=  " {$this->$property}, ";  
                 }   

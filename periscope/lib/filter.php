@@ -2,11 +2,12 @@
 
 	$(document).ready(function() {
 		$("#filter-menu").hide();
-		$("#filter-toggle").on("click", function () {
-			$("#filter-menu").slideToggle(100, "linear", function () {
-				if ($("#filter-menu").is(":visible")) {
-					$("#filter-menu").css("display","inline");
-				}
+		$("#filter-toggle").on("click", function (event) {
+                        event.prevenDefault();
+			$("#filter-menu").slideToggle(500, "swing", function () {
+                            if ($("#filter-menu").is(":visible")) {
+                                    $("#filter-menu").css("display","inline");
+                            }
 			});
 		});
 		<?php if ($page_title == "Timeline") {
@@ -132,7 +133,7 @@
 
 <section id="filter-container" class="clearfix">
 
-    <a id="filter-toggle" class="button" href="#filter-menu">Filter Units</a>
+    <button id="filter-toggle" class="button>Filter Units</button>
     <a id="filter-clear" class="button" href="browse.php">Clear All Filters</a>
 
 

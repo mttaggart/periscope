@@ -37,7 +37,8 @@ $asset_types = array("EssentialQuestion",
                      "Skill",
                      "Activity",
                      "Resource",
-                     "Assessment");
+                     "Assessment",
+                     "Standard");
 
 
 class EssentialQuestion extends Asset {
@@ -108,6 +109,25 @@ class AssessmentType extends DBObject {
         $new_asstype->text = $info_array["AT_Text"];
         return $new_asstype;
     }    
+}
+
+class Standard extends Asset {
+    public static $table = "Standards";
+    public static $table_prefix = "STD";
+    public static $label = "Standards";
+    public static $insert_columns = array("Text"=>"text",
+                                          "Rank"=>"rank",
+                                          "U_ID" => "unit",
+                                          "STD_I_ID"=>"standardListItem");
+    //public static type
+    public $standardListItem;
+    
+    static public function build_from_sql($info_array) {
+        //uses an info array from sql_get or id_get to assign properties 
+        $new_standard = parent::build_from_sql($info_array);
+        $new_standard->standardListItem = (int)$info_array["STD_I_ID"];
+        return $new_standard;
+    } 
 }
 
 ?>

@@ -41,7 +41,10 @@ class Gantti {
     foreach($this->data as $d) {
               
       $this->blocks[] = array(
-        'label' => $d['label'],
+        'label' => "<a class='button' href='view-unit.php?u=" . 
+          $d['id'] . 
+          "'>" . 
+          $d['label'] . "</a>",
         'start' => $start = strtotime($d['start']),
         'end'   => $end   = strtotime($d['end']),
         'class' => @$d['class']
