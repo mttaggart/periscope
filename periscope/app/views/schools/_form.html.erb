@@ -10,8 +10,15 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="actions">
-    <%= f.submit %>
+  <div class="row">
+    <div class="small-12 medium-6 medium-offset-3">
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="small-12 medium-6 medium-offset-3">
+      <%= f.submit class: "button" %>
+    </div>
   </div>
 <% end %>
