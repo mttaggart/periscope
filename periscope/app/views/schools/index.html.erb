@@ -1,25 +1,30 @@
 <p id="notice"><%= notice %></p>
+<div class="row">
+  <div class="small-12 medium6 medium offset-3 columns">
+    <h1>Schools</h1>
+  </div>
+</div>
+<div class="row">
+  <div class="small-12 medium6 medium offset-3 columns">
+    <table>
+      <thead>
+        <tr>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
 
-<h1>Listing Schools</h1>
+      <tbody>
+        <% @schools.each do |school| %>
+        <tr>
+          <td><%= link_to school.name, school %></td>
+          <td><%= link_to 'Edit', edit_school_path(school) %></td>
+          <td><%= link_to 'Destroy', school, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <br>
 
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @schools.each do |school| %>
-      <tr>
-        <td><%= link_to 'Show', school %></td>
-        <td><%= link_to 'Edit', edit_school_path(school) %></td>
-        <td><%= link_to 'Destroy', school, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New School', new_school_path %>
+    <%= link_to 'New School', new_school_path %>
+  </div>
+</div>

@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
-  resources :subjects
-  resources :grade_levels
-  resources :schools
+  resources :schools do
+    resources :grade_levels
+    resources :subjects
+    resources :units
+  end
   resources :users
-  resources :units
   root "units#home"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
