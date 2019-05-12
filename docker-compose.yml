@@ -1,0 +1,22 @@
+version: "3.7"
+services:
+  web:
+    image: nginx:latest
+    ports:
+      - "8080:80"
+    volumes:
+      - ./periscope:/periscope
+      - ./site.conf:/etc/nginx/conf.d/site.conf
+    depends_on:
+      - php
+      - db
+  php:
+    image: php:7-fpm
+    volumes:
+      - ./periscope:/periscope
+  db:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: periscopepass
+      MYSQL_DATABASE: periscope
+
