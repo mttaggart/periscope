@@ -1,4 +1,4 @@
-#periscope
+# periscope
 
 Curriculum Mapping Platform for Independent Schools
 
@@ -8,13 +8,13 @@ Stable Beta with Installer. You will need:
 2. MySQL
 
 
-##ABOUT
+## About
 
 Curriculum Mapping for independent schools based on Understanding by Design
 
 Periscope offers Unit-based Curriculum Mapping for schools. Intended as a replacement for products like Rubicon Atlas, Periscope is a simple, flexible database and interface for working with instructional Units and Assets. Included Assets are Essential Questions, Content, Skills, Resources Activities, Assessments, and Standards.
 
-##Installation
+## Installation
 
 1. Download and extract the source zip, which contains a "periscope" folder. 
 2. Move the "periscope" folder into the folder used by your webserver.
@@ -32,7 +32,7 @@ Major thanks to Bastian Allgeier's [Mahatma Gantti](http://bastianallgeier.com/g
 
 Periscope uses the Google Charts API for the Assessment Distribution View.
 
-##License
+## License
 
 The MIT License (MIT)
 
