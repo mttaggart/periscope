@@ -6,7 +6,7 @@ services:
       - "8080:80"
     volumes:
       - ./periscope:/periscope
-      - ./site.conf:/etc/nginx/conf.d/site.conf
+      - ./default.conf:/etc/nginx/conf.d/default.conf
     depends_on:
       - php
       - db
